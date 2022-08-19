@@ -63,7 +63,7 @@
                   <header>Teacher's Directory</header>
                   <ul class="mega-links">
                     <li><a href="{{ route('home_teachers') }} ">Teachers</a></li>
-                    <li><a href="{{ route('int_advisors') }}">International Advisor</a></li>
+                    <li><a href="{{ route('int_advisors') }}">Int. Advisor</a></li>
                     <li><a href="{{ route('management_committee') }}">Management </a></li>
                   </ul>
                 </div>
@@ -88,8 +88,8 @@
           </li>
           <li class="pt-1">
             <a href="{{ route('admission_information') }}" class="desktop-item me-3">Admission</a>
-            <input type="checkbox" id="showMega">
-            <label for="showMega" class="mobile-item">Admission</label>
+            <input type="checkbox" id="showMega1">
+            <label for="showMega1" class="mobile-item">Admission</label>
             <div class="mega-box">
               <div class="content">
                 <div class="row">
@@ -132,19 +132,18 @@
           <li class="me-3 pt-1"><a href="{{ route('events') }}">Events</a></li>
           <li class="me-3 pt-1"><a href="{{ route('internship') }}">Internship</a></li>
           <li class="me-3 pt-1"><a href="{{ route('scholarship') }}">Scholarship</a></li>
-          <li class="me-3 pt-1"><a href="{{ route('career_page') }}">Career</a></li>
-          <li class="me-3 pt-1"><a href="{{ route('home_alumni') }}">Alumni</a></li>
-         
-               <li class="pt-1">
+          <li class="pt-1">
             <a href="{{ route('contact') }}" class="desktop-item">Contacts</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Contacts</label>
+            <input type="checkbox" id="showDrop1">
+            <label for="showDrop1" class="mobile-item">Contacts</label>
             <ul class="drop-menu">
               <li ><a href="{{ route('guestmessage') }} ">President Message</a></li>
               <li ><a href="{{ route('guestmessage_coo') }}">COO Message</a></li>
               <li ><a href="{{ route('guestmessage_vp') }}">Vice Principal Message</a></li>
             </ul>
           </li>
+          <li class="me-3 pt-1"><a href="{{ route('career_page') }}">Career</a></li>
+          <li class="me-3 pt-1"><a href="{{ route('home_alumni') }}">Alumni</a></li>
         </ul>
         <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
       </div>

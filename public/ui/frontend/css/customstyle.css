@@ -373,12 +373,16 @@ nav .wrapper {
     #showMega:checked ~ .mega-box {
         max-height: 100%;
     }
+    #showDrop1:checked ~ .drop-menu,
+    #showMega1:checked ~ .mega-box {
+        max-height: 100%;
+    }
     .nav-links .desktop-item {
         display: none;
     }
     .nav-links .mobile-item {
         display: block;
-        color: #181616;
+        color: #fffafa;
         font-size: 20px;
         font-weight: 500;
         padding-left: 20px;

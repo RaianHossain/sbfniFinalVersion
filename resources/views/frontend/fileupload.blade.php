@@ -22,9 +22,9 @@
 
     {{-- <div class="container"> --}}
 
-        <div style="padding: 10px 10px 10px 10px">
+        <div style="padding: 10px 10px ">
             
-            <div class="col-md-12 col-sm-12 ">
+            <div class="col-md-12 col-sm-12 mb-2">
                  @php
                 $show_fileupload_admission=App\Models\FileUpload::where('file_type','Admission')->paginate(5);
 
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div >
-            <div class="col-md-12 col-sm-12 ">
+            <div class="col-md-12 col-sm-12 mb-2">
                 @php
                 $show_fileupload_career=App\Models\FileUpload::where('file_type','career')->paginate(5);
                 

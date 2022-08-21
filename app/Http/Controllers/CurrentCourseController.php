@@ -24,6 +24,11 @@ class CurrentCourseController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'course_id' => 'required',
+            'teacher_id' => 'required',
+            'year' => 'required',
+        ]);
         try{
             CurrentCourse::create([
                 'teacher_id' => $request->teacher_id,

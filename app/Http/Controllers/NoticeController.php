@@ -37,6 +37,12 @@ class NoticeController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'subject' => 'required',
+            'date' => 'required',
+            'description' => 'required',
+            'pdf' => 'required | mimes:pdf,doc,docx,xls,xlsx,ppt,pptx',
+        ]);
         try {
             Notice::create([
                 'title' => $request->title,

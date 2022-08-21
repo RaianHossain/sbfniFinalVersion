@@ -28,6 +28,9 @@ class CourseRegistrationController extends Controller
 
     public function store($course_id, $student_id)
     {
+       
+
+
         $course_year = Year::where('year', '2022')->where('student_id', $student_id)->first()->course_year;
         CourseRegistration::create([
             'student_id' => $student_id,

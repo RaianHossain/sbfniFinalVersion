@@ -61,7 +61,7 @@ class StudentController extends Controller
             $year=Year::all();
             $sections=Section::all();
             $students=Student::all();
-            $markdistributions=MarkDestribution::all();
+            // $markdistributions=MarkDestribution::all();
             $profiles=Profile::all();
             // $user=auth()->user();
             try {

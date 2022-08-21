@@ -39,6 +39,12 @@ class AlumniController extends Controller
     public function store(Request $request)
     {
         //  @dd($request);
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
         try {
             Alumni::create([
                 'student_reg_no' => $request->student_reg_no,

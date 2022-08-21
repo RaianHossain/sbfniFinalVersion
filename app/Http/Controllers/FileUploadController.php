@@ -35,6 +35,11 @@ class FileUploadController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'subject' => 'required',
+            'file_type' => 'required',
+            'file' => 'required|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar',
+        ]);
         try {
             FileUpload::create([
                 'file_type' => $request->file_type,

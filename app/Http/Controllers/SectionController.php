@@ -35,6 +35,9 @@ class SectionController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'section_name' => 'required',
+        ]);
         //  @dd($request);
         try {
             Section::create([

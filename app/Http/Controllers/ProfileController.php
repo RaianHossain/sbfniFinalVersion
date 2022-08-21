@@ -36,6 +36,7 @@ class ProfileController extends Controller
 
     public function store(Request $request)
     {
+        
         try {
             profile::create([
                 'user_id' => $request -> user_id,

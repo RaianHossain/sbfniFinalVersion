@@ -40,6 +40,14 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'description' => 'required',
+            'lecturer_name' => 'required',
+            'date' => 'required',
+            'time' => 'required',
+            'location' => 'required',
+            'img1' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
         
         try {
             Event::create([

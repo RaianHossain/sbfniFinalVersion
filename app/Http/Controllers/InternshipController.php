@@ -35,6 +35,14 @@ public function create()
 
 public function store(Request $request)
 {
+    $this->validate($request, [
+        'name' => 'required',
+        'student_reg_no' => 'required',
+        'current_position' => 'required',
+        'address' => 'required',
+        'passing_year' => 'required',
+        'internship_role' => 'required',
+    ]);
     //  @dd($request);
     try {
         Internship::create([

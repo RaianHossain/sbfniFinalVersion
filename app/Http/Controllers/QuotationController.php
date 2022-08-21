@@ -37,6 +37,12 @@ class QuotationController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'author_name' => 'required',
+            'title' => 'required',
+            'quotation' => 'required | min:10 | max:1000',
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
         try {
             Quotation::create([
                 'title' => $request->title,

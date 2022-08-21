@@ -32,6 +32,13 @@ class ResultController extends Controller
     
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'currentcourse_id' => 'required',
+            'student_id' => 'required',
+            'year' => 'required',
+            'course_year' => 'required',
+        ]);
+
         dd(($request->all()));
         $courses_id = [];
         for($i = 0; $i<count($request->total); $i++){

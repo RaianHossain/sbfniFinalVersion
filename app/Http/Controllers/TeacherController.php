@@ -38,6 +38,10 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'designation' => 'required',
+        ]);
         try {
             $techer = Teacher::create([
                 'name' => $request->name,

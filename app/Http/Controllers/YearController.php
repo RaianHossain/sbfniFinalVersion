@@ -41,6 +41,11 @@ class YearController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'year' => 'required',
+            'course_year' => 'required',
+            'student_id' => 'required',
+        ]);
         $course = Course::all();
         try {
             Year::create([

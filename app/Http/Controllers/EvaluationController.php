@@ -27,6 +27,14 @@ class EvaluationController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'prepared' => 'required',
+            'knows_subject' => 'required',
+            'organized' => 'required',
+            'currentcourse_id' => 'required',
+            'teacher_id' => 'required',
+            'currentcourse_id' => 'required',
+        ]);
         // die("check");
         // dd($request->all());
         $newEvaluation = Evaluation::create([

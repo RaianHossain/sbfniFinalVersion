@@ -36,6 +36,11 @@ class RankingController extends Controller
     
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'rank_name' => 'required',
+            'rank_position' => 'required',
+            
+        ]);
         //  @dd($request);
         try {
             Ranking::create([

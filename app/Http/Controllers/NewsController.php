@@ -54,6 +54,13 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'script1' => 'required',
+            'script2' => 'required',
+            'img1' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img2' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            
+        ]);
         //  @dd($request);
         try {
             News::create([

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\MarkDestribution;
+use App\Models\Student;
 use App\Models\User;
 use App\Models\Year;
 use Exception;
@@ -68,9 +68,11 @@ class YearController extends Controller
     public function edit(Year $year)
     {
         $course = Course::all();
+        $year = Year::find($year->id);
+        $students = User::where('role_id', '=', '3')->get();
 
         return view('backend.year.edit', [
-            'single_year' => $year, 'course' => $course
+            'single_year' => $year, 'course' => $course, 'students' => $students,
         ]);
     }
 
@@ -85,14 +87,14 @@ class YearController extends Controller
     {
         $year = Year::find($id);
         $course = Course::all();
+        $students = Student::all();
 
         $year->update([
 
-            'year_name' => $request->year_name,
-            'course_name' => $request->course_name,
-            'year' => $request->year,
+            'student_id' => $request->student_id,
+                'course_year' => $request->course_year,
+                'year' => $request->year,
                 'section' => $request->section,
-
         ]);
 
         $year->update();

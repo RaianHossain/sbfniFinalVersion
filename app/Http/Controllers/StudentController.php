@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\MarkDestribution;
 use App\Models\Profile;
 use App\Models\Section;
 use App\Models\Student;
@@ -40,7 +39,6 @@ class StudentController extends Controller
             $year=Year::all();
             $sections=Section::all();
             $students=Student::all();
-            $markdistributions=MarkDestribution::all();
             $profiles=Profile::all();
             // $user=auth()->user();
             return view('backend.student.create',[
@@ -48,7 +46,6 @@ class StudentController extends Controller
                 'years'=>$year,
                 'sections'=>$sections,
                 'students'=>$students,
-                'markdistributions'=>$markdistributions,
                 'profiles'=>$profiles,
                 // 'user'=>$user
             ]);
@@ -61,7 +58,6 @@ class StudentController extends Controller
             $year=Year::all();
             $sections=Section::all();
             $students=Student::all();
-            // $markdistributions=MarkDestribution::all();
             $profiles=Profile::all();
             // $user=auth()->user();
             try {
@@ -69,10 +65,7 @@ class StudentController extends Controller
                     'student_reg_no' => $request->student_reg_no,
                     'year' => $request->year,
                     'section' => $request->section,
-                    // 'course_name' => $request->course_name,
                     'course_name' => $request->array_pluck($cours, 'course_name'),
-                    // 'profile_id' => $request->profile_id,
-                    // 'user_id' => $user->id
                 ]);
             } catch (QueryException $e) {
                 return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
@@ -90,18 +83,14 @@ class StudentController extends Controller
             $year=Year::all();
             $sections=Section::all();
             $students=Student::all();
-            $markdistributions=MarkDestribution::all();
             $profiles=Profile::all();
-            // $user=auth()->user();
             return view('backend.student.edit',[
                 'single_student'=>$student,
                 'courses'=>$cours,
                 'years'=>$year,
                 'sections'=>$sections,
                 'students'=>$students,
-                'markdistributions'=>$markdistributions,
                 'profiles'=>$profiles,
-                // 'user'=>$user
             ]);
         }
 
@@ -112,9 +101,6 @@ class StudentController extends Controller
             $year=Year::all();
             $sections=Section::all();
             $students=Student::all();
-            $markdistributions=MarkDestribution::all(); 
-            // $user=auth()->user()->id;
-            // $profiles=Profile::findOrFail(auth()->user()->id=='user_id');
            
             try {
                 $student->update([
@@ -122,8 +108,6 @@ class StudentController extends Controller
                     'year' => $request->year,
                     'section' => $request->section,
                     'course_name' => $request->course_name,
-                    // 'profile_id' => $request->profile_id,
-                    // 'user_id' => $user->id
                 ]);
             } catch (QueryException $e) {
                 return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
@@ -155,18 +139,12 @@ class StudentController extends Controller
             $year=Year::all();
             $sections=Section::all();
             $students=Student::all();
-            // $markdistributions=MarkDestribution::all();
-            // $profiles=Profile::all();
-            // $user=auth()->user();
             return view('backend.student.show',[
                 'show_student'=>$student,
                 'courses'=>$cours,
                 'years'=>$year,
                 'sections'=>$sections,
                 'students'=>$students,
-                // 'markdistributions'=>$markdistributions,
-                // 'profiles'=>$profiles,
-                // 'user'=>$user
             ]);
         }
 

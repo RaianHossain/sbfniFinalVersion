@@ -15,11 +15,13 @@
             <li class="breadcrumb-item active">Course Registration</li>
 
         </x-backend.layouts.elements.breadcrumb>
+
     </x-slot>
+    
 
     <div class="row ps-2 pe-2">
-            <div class="col-md-8">
-            <table class="table table-dark table-striped">
+            <div class="col-md-8" id="table-spreid">
+            <table class="table table-dark table-striped" id="table-spreid">
                 <thead>
                     <tr>
                     <th scope="col">#</th>
@@ -43,19 +45,26 @@
                 </tbody>
             </table>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id="listdiv">
             
                 {{-- </div> --}}
             <ul class="list-group">
+                @if($courses->count() == 0)
+
                 
                 @foreach($currentcourseslist as $currentcourse)
                         
-                        <li class="list-group-item"><div class="d-flex justify-content-between"><div>{{ $currentcourse->course->course_name }} (Teacher: {{ $currentcourse->teacher->name }})</div> <a href="{{ route('course-registration-store', ['course_id'=> $currentcourse->id, 'student_id'=>auth()->user()->id, 'year'=>2022, ]) }}" class="btn btn-primary">ADD</a></div></li>
+                        <li class="list-group-item"><div class="d-flex justify-content-between"><div>{{ $currentcourse->course->course_name }} (Teacher: {{ $currentcourse->teacher->name }})</div> <a href="{{ route('course-registration-store', ['course_id'=> $currentcourse->id, 'student_id'=>auth()->user()->id, 'year'=>date("Y") ]) }}" class="btn btn-primary">ADD</a></div></li>
                         
                     
                 
                 @endforeach
-                
+                @else
+                <script>
+                    document.getElementById('listdiv').style.display = 'none';
+                    document.getElementById("table-spreid").setAttribute("class", "col-md-12");
+                </script>
+                @endif
                 
             </ul>
             </div>

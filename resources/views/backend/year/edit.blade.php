@@ -34,53 +34,60 @@
                 @csrf
                 @method('put')
 
-                <select name="year_name" class="form-control">
+                <div class="form-group">
+                    <label for="student_id">Select student</label>
+                    <select name="student_id" class="form-control" id="student_id" >
+                        
+                        <option value="">Select Year</option>
+                        @foreach($students as $student)
+                        <option value="{{ $student->id }}" {{ $single_year->student_id == $student->id ? 'selected' : '' }}>{{ $student->name }} ({{ $student->reg_num ? $student->reg_num : $student->roll_num }})</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="course_year">Select Course Year</label>
+                    <select name="course_year" class="form-control" id="course_year">
+                        <option value="">Select Course</option>
+                        
+                            <option value="1st" {{ $single_year->course_year == '1st' ? 'selected' : '' }}>1st Year</option>
+                            <option value="2md" {{ $single_year->course_year == '2md' ? 'selected' : '' }}>2nd Year</option>
+                            <option value="3rd" {{ $single_year->course_year == '3rd' ? 'selected' : '' }}>3rd Year</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="section">Select Section</label>
+                    <select name="section" class="form-control" id="section">
+                        <option value="">Select Section</option>
+                        
+                            {{-- <option value="A">A</option> --}}
+                            <script>
+                                var section = ['A','B','C','D','E'];
+                                for(var i = 0; i < section.length; i++){
+                                    document.write("<option value='"+section[i]+"'>"+section[i]+"</option>");
+                                }
+                            </script>
+
+                        </select>
+                    </div>
+
+                <label for="year">Select Year</label>
+                <select name="year" class="form-control" id="year">
                     <option value="">Select Year</option>
-                        <option value="1" {{ $single_year->year_name == 1 ? 'selected' : '' }}>First Year</option>
-                        <option value="2" {{ $single_year->year_name == 2 ? 'selected' : '' }}>Second Year</option>
-                        <option value="3" {{ $single_year->year_name == 3 ? 'selected' : '' }}>Third Year</option>
+                   
+                        {{-- <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>    
+                        <option value="2019">2019</option>              --}}
+                    <script>
+                        var d = new Date();
+                        var n = d.getFullYear();
+                        var i = n;
+                        for(i = n+1; i > n-10; i--){
+                            document.write("<option value='"+i+"'>"+i+"</option>");
+                        }
+                    </script>
                 </select>
-                <br>
-
-                <select name="course_name" class="form-control">
-                    <option value="">Select Course</option>
-                    @foreach($course as $courses)
-                        <option value="{{ $courses->course_name }}" {{ $single_year->course_name == $courses->course_name ? 'selected' : '' }}>{{ $courses->course_name }}</option>
-                    @endforeach
-                </select>
-                <br>
-                {{-- <select name="mark_distribution_id[]" class="form-control" multiple>
-                    <option value="">Select multiple Mark Distribution Type using ctrl button</option>
-                    @foreach($markdestribution as $markDistributions)
-                        <option value="{{ $markDistributions->mark_distribution_name }}">{{ $markDistributions->mark_distribution_name }}</option>
-                    @endforeach
-                </select>  --}}
-
-                    {{-- checkbox --}}
-                    {{-- <div class="form-group">
-                        <label for="mark_distribution_id">Mark Distribution Type</label>
-                        <div class="form-check">
-                            @forelse ($markdestribution as $markDistributions )
-                            <input type="checkbox" name="mark_distribution_id[]" value="{{ $markDistributions->mark_distribution_name }}" {{ in_array($markDistributions->mark_distribution_name, $mark_distribution_id) ? 'checked' : '' }}> {{ $markDistributions->mark_distribution_name }}
-    
-                            @empty
-                                <label class="form-check-label">No Mark Distribution Type Found</label>
-                            @endforelse
-                        </div>
-                    </div> --}}
-              
-                {{-- @checked(true, $single_year->mark_distribution_id) --}}
-                @forelse ($markdestribution as $markDistributions )
-                    <input type="checkbox" name="mark_distribution_id[]" value=" {{ $markDistributions->mark_distribution_name }} " required> {{ $markDistributions->mark_distribution_name }}
-                @empty
-                    <p>No Mark Distribution Type Found</p>
-                @endforelse
-
-
-
-
-
-                <br>
 
                 
                 

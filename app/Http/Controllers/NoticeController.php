@@ -62,12 +62,11 @@ class NoticeController extends Controller
         return view('backend.notices.show', [
             'notice' => $notice
         ]);
-        
     }
 
     public function edit(Notice $notice)
     {
-        return view('backend.notices.edit', ['notice'=>$notice]);
+        return view('backend.notices.edit', ['notice' => $notice]);
     }
 
     public function update(Request $request, Notice $notice)

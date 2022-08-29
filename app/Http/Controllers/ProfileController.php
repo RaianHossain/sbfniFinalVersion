@@ -36,29 +36,29 @@ class ProfileController extends Controller
 
     public function store(Request $request)
     {
-        
+
         try {
             profile::create([
-                'user_id' => $request -> user_id,
-                'full_name' => $request -> full_name,
-                'phone' => $request -> phone,
-                'address' => $request -> address,
-                'session' => $request -> session,
-                'course_name' => $request -> course_name,
-                'current_status' => $request -> current_status,
-                'result' => $request -> result,
-                'nid' => $request -> nid,
-                'dob' => $request -> dob,
-                'gender' => $request -> gender,
-                'blood_group' => $request -> blood_group,
-                'marital_status' => $request -> marital_status,
-                'father_name' => $request -> father_name,
-                'mother_name' => $request -> mother_name,
-                'father_phone' => $request -> father_phone,
-                'parent_address' => $request -> parent_address,
-                'current_year' => $request -> current_year,
-                'current_semester' => $request -> current_semester,
-                'student_id' => $request -> student_id,
+                'user_id' => $request->user_id,
+                'full_name' => $request->full_name,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'session' => $request->session,
+                'course_name' => $request->course_name,
+                'current_status' => $request->current_status,
+                'result' => $request->result,
+                'nid' => $request->nid,
+                'dob' => $request->dob,
+                'gender' => $request->gender,
+                'blood_group' => $request->blood_group,
+                'marital_status' => $request->marital_status,
+                'father_name' => $request->father_name,
+                'mother_name' => $request->mother_name,
+                'father_phone' => $request->father_phone,
+                'parent_address' => $request->parent_address,
+                'current_year' => $request->current_year,
+                'current_semester' => $request->current_semester,
+                'student_id' => $request->student_id,
                 'image' => $this->uploadimg(request()->file('image')),
             ]);
 
@@ -86,36 +86,36 @@ class ProfileController extends Controller
     {
         try {
             $requestData = [
-                'user_id' => $request -> user_id,
-                'full_name' => $request -> full_name,
-                'phone' => $request -> phone,
-                'address' => $request -> address,
-                'session' => $request -> session,
-                'course_name' => $request -> course_name,
-                'current_status' => $request -> current_status,
-                'result' => $request -> result,
-                'nid' => $request -> nid,
-                'dob' => $request -> dob,
-                'gender' => $request -> gender,
-                'blood_group' => $request -> blood_group,
-                'marital_status' => $request -> marital_status,
-                'father_name' => $request -> father_name,
-                'mother_name' => $request -> mother_name,
-                'father_phone' => $request -> father_phone,
-                'parent_address' => $request -> parent_address,
-                'current_year' => $request -> current_year,
-                'current_semester' => $request -> current_semester,
-                'student_id' => $request -> student_id,
+                'user_id' => $request->user_id,
+                'full_name' => $request->full_name,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'session' => $request->session,
+                'course_name' => $request->course_name,
+                'current_status' => $request->current_status,
+                'result' => $request->result,
+                'nid' => $request->nid,
+                'dob' => $request->dob,
+                'gender' => $request->gender,
+                'blood_group' => $request->blood_group,
+                'marital_status' => $request->marital_status,
+                'father_name' => $request->father_name,
+                'mother_name' => $request->mother_name,
+                'father_phone' => $request->father_phone,
+                'parent_address' => $request->parent_address,
+                'current_year' => $request->current_year,
+                'current_semester' => $request->current_semester,
+                'student_id' => $request->student_id,
             ];
 
             // if ($request->hasFile('img')) {
             //     $img = $request->file('img');
-            //     $name = time() . '.' . $img->getClientOriginalExtension();
+            //     $name =  time() ;
             //     $destinationPath = storage_path('/app/public/profiles/');
             //     $img->move($destinationPath, $name);
             //     $profile->img = $name;
             // }
-            if($request->hasFile('image')){
+            if ($request->hasFile('image')) {
                 $profile->image = $this->uploadimg(request()->file('image'));
             }
 

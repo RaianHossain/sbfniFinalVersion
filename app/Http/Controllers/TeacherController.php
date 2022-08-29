@@ -54,9 +54,9 @@ class TeacherController extends Controller
                 'experience' => $request->experience,
                 'communication' => $request->communication,
                 'leadership' => $request->leadership,
-               
+
             ]);
-            if(request()->file('img')){
+            if (request()->file('img')) {
                 $techer->img = $this->uploadimg(request()->file('img'));
                 $techer->save();
             }
@@ -99,7 +99,7 @@ class TeacherController extends Controller
 
             if ($request->hasFile('img')) {
                 $img = $request->file('img');
-                $name = time() . '.' . $img->getClientOriginalExtension();
+                $name =  time() . '.' . $img->getClientOriginalExtension();
                 $destinationPath = storage_path('/app/public/teachers/');
                 $img->move($destinationPath, $name);
                 $teacher->img = $name;
@@ -140,7 +140,7 @@ class TeacherController extends Controller
     //     return redirect()->route('teachers.trashed')->withMessage('Successfully Restored!');
     // }
 
-        public function restore($teacher)
+    public function restore($teacher)
     {
         $teacher = Teacher::onlyTrashed()->findOrFail($teacher);
         $teacher->restore();

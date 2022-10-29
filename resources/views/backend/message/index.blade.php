@@ -18,10 +18,11 @@
         </x-backend.layouts.elements.breadcrumb>
     </x-slot>
 
-    <div class="card mb-4" style="width:fit-content">
+    <div class="card mb-4" >
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Message 
+           
+            <a class="btn btn-sm btn-info" href="{{ route('message.deleteall') }}">Delete All Messages</a>
 
             {{-- @can('create-category') --}}
             {{-- <a class="btn btn-sm btn-info" href="{{ route('message.create') }}">Add New</a> --}}

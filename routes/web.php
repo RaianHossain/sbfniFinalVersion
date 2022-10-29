@@ -277,6 +277,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/admin/message', MessageController::class);
+Route::get('message/deleteall', [MessageController::class, 'deleteAll'])->name('message.deleteall');
 Route::get('/notification/{message}/{notification}', [NotificationController::class, 'showForUpdating'])->name("/admin/message.show");
 
 

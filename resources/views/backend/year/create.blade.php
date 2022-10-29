@@ -2,7 +2,6 @@
     <x-slot name="pageTitle">
         Add Form
     </x-slot>
-    @dd($student)
     <x-slot name='breadCrumb'>
         <x-backend.layouts.elements.breadcrumb>
             <x-slot name="pageHeader"> Year Input </x-slot>

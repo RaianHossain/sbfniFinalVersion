@@ -128,6 +128,7 @@ class MessageController extends Controller
     {
         try {
             Message::truncate();
+            Notification::truncate();
             return redirect()->route('message.index')->withMessage('Successfully Deleted!');
         } catch (QueryException $e) {
             return redirect()->back()->withErrors($e->getMessage());

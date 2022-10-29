@@ -36,7 +36,7 @@
                     @foreach($courses as $course)
                     <tr>
                     <th scope="row">{{$i++}}</th>
-                    <td id="courseSelect">{{ $course->mycurrentcourse->course->course_name }}</td>
+                    <td>{{ $course->mycurrentcourse->course->course_name }}</td>
                     <td>{{ $course->mycurrentcourse->teacher->name }}</td>
                     <td>{{ $course->year }}</td>
                     <td>{{ $course->course_year }}</td>

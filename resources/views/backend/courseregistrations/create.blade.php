@@ -36,7 +36,7 @@
                     @foreach($courses as $course)
                     <tr>
                     <th scope="row">{{$i++}}</th>
-                    <td>{{ $course->mycurrentcourse->course->course_name }}</td>
+                    <td id="courseSelect">{{ $course->mycurrentcourse->course->course_name }}</td>
                     <td>{{ $course->mycurrentcourse->teacher->name }}</td>
                     <td>{{ $course->year }}</td>
                     <td>{{ $course->course_year }}</td>
@@ -49,8 +49,7 @@
             
                 {{-- </div> --}}
             <ul class="list-group">
-                @if($courses->count() == 0)
-
+                {{-- @if($courses->count() == 0) --}}
                 
                 @foreach($currentcourseslist as $currentcourse)
                         
@@ -59,19 +58,19 @@
                     
                 
                 @endforeach
-                @else
+                {{-- @else
                 
                 @foreach($currentcourseslist as $currentcourse)
                         
                         <li class="list-group-item"><div class="d-flex justify-content-between"><div>{{ $currentcourse->course->course_name }} (Teacher: {{ $currentcourse->teacher->name }})</div> <a href="#" class="btn btn-success"></a></div></li>
-                @endforeach
+                @endforeach --}}
 
 
                 {{-- <script>
                     document.getElementById('listdiv').style.display = 'none';
                     document.getElementById("table-spreid").setAttribute("class", "col-md-12");
                 </script> --}}
-                @endif
+                {{-- @endif --}}
                 
             </ul>
             </div>

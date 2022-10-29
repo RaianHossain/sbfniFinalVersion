@@ -39,7 +39,7 @@ class ResultController extends Controller
             'course_year' => 'required',
         ]);
 
-        dd(($request->all()));
+        // dd(($request->all()));
         $courses_id = [];
         for($i = 0; $i<count($request->total); $i++){
             array_push($courses_id, "course_id_".$i);

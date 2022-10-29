@@ -1,14 +1,14 @@
 <x-backend.layouts.master>
     <x-slot name="pageTitle">
-        Year Input
+        Yearwise Student Entry
     </x-slot>
 
     <x-slot name='breadCrumb'>
         <x-backend.layouts.elements.breadcrumb>
-            <x-slot name="pageHeader"> Year Input </x-slot>
+            <x-slot name="pageHeader"> Student Entry </x-slot>
 
             <li class="breadcrumb-item"><a href="{{ route('year.index')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Year Input</li>
+            <li class="breadcrumb-item active">Yearwise Student Entry</li>
 
         </x-backend.layouts.elements.breadcrumb>
     </x-slot>
@@ -17,7 +17,7 @@
     <div class="card mb-4" style="width: 100%">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Year Input
+            Yearwise Student Entry
 
             {{-- @can('create-category') --}}
             <a class="btn btn-sm btn-info" href="{{ route('year.create') }}">Add New</a>

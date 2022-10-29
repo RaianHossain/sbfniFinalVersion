@@ -28,16 +28,19 @@ class CourseRegistrationController extends Controller
 
     public function store($course_id, $student_id)
     {
-       
-        if(CourseRegistration::where('currentcourse_id', $course_id)->where('student_id', $student_id)->where('year', date('Y'))->where('course_year', 1)->exists()) {
-            return redirect()->back()->with('error', 'Error: You have already registered for this course');
+        $course_year = Year::where('year', date('Y'))->where('student_id', $student_id)->first()->course_year;
+        
+        //  dd($course_year[0]);
+        if(CourseRegistration::where('currentcourse_id', $course_id)->where('student_id', $student_id)->where('year', date('Y'))->where('course_year', $course_year[0])->exists()) {
+            return redirect()->back()->withErrors( 'Error: You have already registered for this course');
         }
         else {
+            
             CourseRegistration::create([
                 'currentcourse_id' => $course_id,
                 'student_id' => $student_id,
                 'year' => date('Y'),
-                'course_year' => 1,
+                'course_year' => $course_year[0],
             ]);
             return redirect()->back()->with('success', 'Success: You have successfully registered for this course');
         }

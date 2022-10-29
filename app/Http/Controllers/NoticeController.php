@@ -40,7 +40,6 @@ class NoticeController extends Controller
         $this->validate($request, [
             'subject' => 'required',
             'date' => 'required',
-            'description' => 'required',
             'pdf' => 'required | mimes:pdf,doc,docx,xls,xlsx,ppt,pptx',
         ]);
         try {

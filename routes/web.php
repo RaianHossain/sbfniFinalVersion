@@ -25,6 +25,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\YearController;
 use App\Http\Controllers\FileUploadController;
 use App\Models\Role;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Route;
 
@@ -243,11 +244,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/fileupload/{fileupload}', [FileUploadController::class, 'destroy'])->name('fileupload.destroy');
 
     //CurrentCourses
-    
+
     Route::resource('admin/current_courses', CurrentCourseController::class);
 
     //CourseRegistration
-    
+
     Route::get('/admin/course_registration/create', [CourseRegistrationController::class, 'create'])->name('course_registration.create');
     Route::get('/admin/course_registration', [CourseRegistrationController::class, 'index'])->name('course_registration.index');
 

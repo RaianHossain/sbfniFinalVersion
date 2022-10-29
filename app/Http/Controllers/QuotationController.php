@@ -65,16 +65,18 @@ class QuotationController extends Controller
         ]);
     }
 
-    public function edit(Quotation $quotation)
+    public function edit($single_quotation_Edit)
     {
+        $single_quotation_Edit = Quotation::Find($single_quotation_Edit);
         return view('backend.quotations.edit', [
-            'quotation' => $quotation
+            'single_quotation_Edit' => $single_quotation_Edit
         ]);
     }
 
-    public function update(Request $request, Quotation $quotation)
+    public function update(Request $request, $single_update)
     {
         try {
+             $single_update = Quotation::Find($single_update);
             $requestData = [
                 'title' => $request->title,
                 // 'img' => $this->uploadimg(request()->file('img')),
@@ -82,15 +84,19 @@ class QuotationController extends Controller
                 'author_name' => $request->author_name,
             ];
 
-            if ($request->hasFile('img')) {
-                $img = $request->file('img');
-                $name =  time() . '.' . $file->getClientOriginalExtension();
-                $destinationPath = storage_path('/app/public/quotations/');
-                $img->move($destinationPath, $name);
-                $quotation->img = $name;
-            }
+            // if ($request->hasFile('img')) {
+            //     $img = $request->file('img');
+            //     $name =  time() . '.' . $file->getClientOriginalExtension();
+            //     $destinationPath = storage_path('/app/public/quotations/');
+            //     $img->move($destinationPath, $name);
+            //     $quotation->img = $name;
+            // }
 
-            $quotation->update($requestData);
+            if (request()->file('img')) {
+                $requestData['img'] = $this->uploadimg(request()->file('img'));
+            }
+            
+            $single_update->update($requestData);
 
             return redirect()->route('quotations.index')->withMessage('Successfully Updated!');
         } catch (QueryException $e) {

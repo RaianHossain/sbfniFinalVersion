@@ -80,16 +80,20 @@ class EventController extends Controller
         ]);
     }
 
-    public function edit(Event $event)
+    public function edit($event_id)
     {
+        $event = Event::find($event_id);
         return view('backend.events.edit', [
-            'events' => $event
+            'single_event' => $event
         ]);
     }
 
-    public function update(Request $request, Event $event)
+    public function update(Request $request, $event_id)
     {
+        
+        // dd($request->all());
         try {
+            $event = Event::find($event_id);
             $requestData = [
                 // 'img1' => $this->uploadimg(request()->file('img1')),
                 'description' => $request->description,
@@ -111,10 +115,12 @@ class EventController extends Controller
             if (request()->file('lecturer_img')) {
                 $requestData['lecturer_img'] = $this->uploadimg2(request()->file('lecturer_img'));
             }
+            
+            //  dd($requestData);
             $event->update($requestData);
 
 
-            return redirect()->route('events.index')->withMessage('Successfully Created!');
+            return redirect()->route('events.index')->withMessage('Successfully Updated!');
         } catch (QueryException $e) {
             return redirect()->back()->withInput()->withErrors($e->getMessage());
         }
@@ -170,7 +176,7 @@ class EventController extends Controller
 
     public function uploadimg2($file)
     {
-       
+       sleep(1);
          $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)

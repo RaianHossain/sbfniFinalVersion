@@ -30,18 +30,18 @@
             </div>
             @endif
 
-            <form action="{{ route('quotations.update', ['quotation' => $quotation->first()->id]) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('quotations.update', ['single_update' => $single_quotation_Edit->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
-                <x-backend.form.input name="title" :value="$quotation->first()->title"/> 
+                <x-backend.form.input name="title" :value="$single_quotation_Edit->title"/> 
                 
-                <x-backend.form.input name="img" type="file" :value="$quotation->first()->image" />
+                <x-backend.form.input name="img" type="file" :value="$single_quotation_Edit->image" />
 
                 <x-backend.form.textarea name="quotation" >
-                {{ $quotation->first()->quotation }}
+                {{ $single_quotation_Edit->quotation }}
                 </x-backend.form.textarea>
 
-                <x-backend.form.input name="author_name" :value="$quotation->first()->author_name" />
+                <x-backend.form.input name="author_name" :value="$single_quotation_Edit->author_name" />
                 
                 <x-backend.form.button>Update</x-backend.form.button>
 

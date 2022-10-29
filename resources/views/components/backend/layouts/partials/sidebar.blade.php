@@ -130,23 +130,19 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Mark Destribution
                 </a>
-
                 
                 <a class="nav-link" href="{{ route('markinput.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Mark Input
                 </a>
-
                 <a class="nav-link" href="{{ route('exam.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Exam
                 </a>
-
                 <a class="nav-link" href="{{ route('gradecategory.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Grade Description
                 </a>
-
                 <a class="nav-link" href="{{ route('grade.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                    Grade Input
@@ -214,5 +210,3 @@
         </div>
     </nav>
 </div>
-
-

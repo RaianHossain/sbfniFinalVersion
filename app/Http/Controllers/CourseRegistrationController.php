@@ -13,12 +13,10 @@ class CourseRegistrationController extends Controller
 {
     public function create()
     {
-        
         $currentcourseslist = CurrentCourse::where('year', date('Y'))->get();
         // dd($currentcourseslist);
         
         $courses = CourseRegistration::where('student_id', auth()->user()->id)->where('year', date('Y'))->where('course_year', 1)->get();
-        
         // dd($courses);
         return view('backend.courseregistrations.create', ['currentcourseslist' => $currentcourseslist, 'courses' => $courses]);
     }
@@ -29,20 +27,17 @@ class CourseRegistrationController extends Controller
     }
 
     public function store($course_id, $student_id)
-    {
-        $course_year = Year::where('year', date('Y'))->where('student_id', $student_id)->first()->course_year;
-        
-        //  dd($course_year[0]);
-        if(CourseRegistration::where('currentcourse_id', $course_id)->where('student_id', $student_id)->where('year', date('Y'))->where('course_year', $course_year[0])->exists()) {
-            return redirect()->back()->withErrors( 'Error: You have already registered for this course');
+    {       
+        if(CourseRegistration::where('currentcourse_id', $course_id)->where('student_id', $student_id)->where('year', date('Y'))->where('course_year', 1)->exists()) {
+            return redirect()->back()->with('error', 'Error: You have already registered for this course');
         }
         else {
-            
+            $course_year = Year::where('student_id', $student_id)->where('year', date('Y'))->first()->course_year;
             CourseRegistration::create([
                 'currentcourse_id' => $course_id,
                 'student_id' => $student_id,
                 'year' => date('Y'),
-                'course_year' => $course_year[0],
+                'course_year' => $course_year,
             ]);
             return redirect()->back()->with('success', 'Success: You have successfully registered for this course');
         }

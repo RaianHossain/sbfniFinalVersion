@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\CourseRegistration;
 use App\Models\CurrentCourse;
 use App\Models\Teacher;
+use App\Models\User;
 use App\Models\Year;
 use Illuminate\Http\Request;
 
@@ -13,12 +14,16 @@ class CourseRegistrationController extends Controller
 {
     public function create()
     {
-        $currentcourseslist = CurrentCourse::where('year', date('Y'))->get();
         // dd($currentcourseslist);
         
-        $courses = CourseRegistration::where('student_id', auth()->user()->id)->where('year', date('Y'))->where('course_year', 1)->get();
+        $student = User::where('id', auth()->user()->id)->first();
+        $yearWiseInfo = Year::where('student_id', $student->id)->where('year', date('Y'))->first();
+        
+        $currentcourseslist = CurrentCourse::where('year', date('Y'))->where('course_year', $yearWiseInfo->course_year)->get();
+
+        $courses = CourseRegistration::where('student_id', auth()->user()->id)->where('year', date('Y'))->where('course_year', $yearWiseInfo->course_year)->get();
         // dd($courses);
-        return view('backend.courseregistrations.create', ['currentcourseslist' => $currentcourseslist, 'courses' => $courses]);
+        return view('backend.courseregistrations.create', ['currentcourseslist' => $currentcourseslist, 'courses' => $courses, 'yearWiseInfo' => $yearWiseInfo]);
     }
 
     public function index()
@@ -33,6 +38,7 @@ class CourseRegistrationController extends Controller
         }
         else {
             $course_year = Year::where('student_id', $student_id)->where('year', date('Y'))->first()->course_year;
+            // dd($course_year);
             CourseRegistration::create([
                 'currentcourse_id' => $course_id,
                 'student_id' => $student_id,

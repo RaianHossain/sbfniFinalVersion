@@ -271,6 +271,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/course_registration/store/{course_id}/{student_id}', [CourseRegistrationController::class, 'store'])->name('course-registration-store');
 
+    Route::get('/admin/course_registration/delete/{course_id}/{student_id}', [CourseRegistrationController::class, 'delete'])->name('course-registration-delete');
+
     Route::get('/admin/get-courses/{course_year}/{year}/{student_id}', [ResultController::class, 'getCourses'])->name('result_getcourses');
 
     

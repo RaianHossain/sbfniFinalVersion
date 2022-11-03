@@ -28,7 +28,7 @@
                 <label for="student_id">Select student</label>
                 <select name="student_id" class="form-control" id="student_id" >
                     
-                    <option value="">Select Year</option>
+                    <option value="">Choose One...</option>
         
                     @foreach($students as $student)
                     
@@ -39,7 +39,7 @@
                 <br/>
                 <label for="course_year">Select Course Year</label>
                 <select name="course_year" class="form-control" id="course_year">
-                    <option value="">Select Course</option>
+                    <option value="">Choose One...</option>
                     
                         <option value="1st">1st Year</option>
                         <option value="2md">2nd Year</option>
@@ -50,7 +50,7 @@
 
                 <label for="section">Select Section</label>
                 <select name="section" class="form-control" id="section">
-                    <option value="">Select Section</option>
+                    <option value="">Choose One...</option>
                     
                         {{-- <option value="A">A</option> --}}
                         <script>

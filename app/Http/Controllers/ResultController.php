@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\CourseRegistration;
 use App\Models\CurrentCourse;
 use App\Models\Result;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ResultController extends Controller
@@ -13,6 +14,9 @@ class ResultController extends Controller
     public function getCourses($course_year, $year, $student_id)
     {
         $courseIds = CourseRegistration::where('student_id', $student_id)->where('year', $year)->where('course_year', $course_year)->get();
+
+        $student = User::where('id', $student_id)->first();
+
         $currentList = [];
         foreach ($courseIds as $courseId) {
             
@@ -27,7 +31,7 @@ class ResultController extends Controller
             array_push($courses, Course::find($course_id));
         }
         // return [$currentList, $student_id,$course_year, $year, $courses];
-        return view('backend.result.courses', compact('currentList', 'student_id','course_year', 'year', 'courses'));
+        return view('backend.result.courses', compact('currentList', 'student_id','course_year', 'year', 'courses', 'student'));
     }
     
     public function store(Request $request)

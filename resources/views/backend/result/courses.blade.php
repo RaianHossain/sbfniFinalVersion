@@ -14,9 +14,8 @@
     // @dd($student_name);
     @endphp
 
-    <div class="container">
-      
-        <p>Name: {{ $student_name ?? ' ' }}</p>
+    <div class="container">      
+        <p>Name: {{ $student->name ?? ' ' }}</p>
     </div>
 <hr>
 <form action="{{ route('result.store') }}" method="POST">

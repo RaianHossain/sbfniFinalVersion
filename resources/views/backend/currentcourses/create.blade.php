@@ -61,7 +61,7 @@
                     id="course_year">
                     <option value="">Select Course</option>
                     <option value="1st">1st Year</option>
-                    <option value="2md">2nd Year</option>
+                    <option value="2nd">2nd Year</option>
                     <option value="3rd">3rd Year</option>
 
                 </select>

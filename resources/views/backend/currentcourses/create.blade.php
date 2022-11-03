@@ -28,7 +28,7 @@
                 @csrf
                 <label for="year">Select Year</label>
                 <select name="year" id="year" class="form-select form-select-lg mb-3"
-                    aria-label=".form-select-lg example">
+                    aria-label=".form-select-lg example" required>
                     <option value="">Choose One</option>
                     <option value="{{ $date }}">{{ $date }}</option>
                     @for ($i = 1; $i <= 5; $i++)
@@ -39,7 +39,7 @@
 
                 <label for="year">Select Course</label>
                 <select name="course_id" id="course_id" class="form-select form-select-lg mb-3"
-                    aria-label=".form-select-lg example">
+                    aria-label=".form-select-lg example" required>
                     <option value="">Choose One</option>
                     @foreach ($courses as $course)
                         <option value="{{ $course->id }}">{{ $course->course_name }}</option>
@@ -48,7 +48,7 @@
 
                 <label for="year">Select Teacher</label>
                 <select name="teacher_id" id="teacher_id" class="form-select form-select-lg mb-3"
-                    aria-label=".form-select-lg example">
+                    aria-label=".form-select-lg example" required>
                     <option value="">Choose One</option>
                     @foreach ($teachers as $teacher)
                         <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
@@ -58,7 +58,7 @@
 
                 <label for="course_year">Select Course Year</label>
                 <select name="course_year" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
-                    id="course_year">
+                    id="course_year" required>
                     <option value="">Select Course</option>
                     <option value="1st">1st Year</option>
                     <option value="2nd">2nd Year</option>

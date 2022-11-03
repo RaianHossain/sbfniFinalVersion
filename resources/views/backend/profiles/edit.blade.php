@@ -69,8 +69,16 @@
                 </select>
                 <x-backend.form.input name="father_phone" :value="$edit_profile->father_phone" type="Number"/>
                 <x-backend.form.input name="parent_address" :value="$edit_profile->parent_address"/>
-                <x-backend.form.input name="current_year" :value="$edit_profile->current_year" type="Number
-                    "/>
+                {{-- <x-backend.form.input name="current_year" :value="$edit_profile->current_year" type="Number
+                    "/> --}}
+                    <label for="current_year">Current Year</label>
+                    <select class="form-select mb-2" name="current_year" id="" aria-label="Current Year">
+                        <option value="">Select One</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option> 
+                    </select>
+                    <br/>
                 <x-backend.form.input name="image" type="file"/>
 
                 <x-backend.form.button>Update</x-backend.form.button>

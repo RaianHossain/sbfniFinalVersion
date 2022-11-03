@@ -15,6 +15,7 @@ class EvaluationController extends Controller
     {
         $courses = Course::all();
         $coursesTaken = CourseRegistration::where('student_id', $student_id)->where('year', $year)->get();
+
         return view('backend.evaluation.show', compact('courses', 'coursesTaken', 'student_id', 'year'));
     }
 

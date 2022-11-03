@@ -28,7 +28,8 @@
         <td>{{ $singleCourseTeken->mycurrentcourse->teacher->name }}</td>
         <td>{{ $singleCourseTeken->mycurrentcourse->course->course_code }}</td>
         <td>
-            <a href="{{ route('teacher.evaluation.create', ['currentcourse_id'=>$singleCourseTeken->mycurrentcourse->id, 'student_id'=>auth()->user()->id, 'year'=>date('Y')]) }}" class="btn btn-primary">Evaluate</a>
+                        <a href="{{ route('teacher.evaluation.create', ['currentcourse_id'=>$singleCourseTeken->mycurrentcourse->id, 'student_id'=>auth()->user()->id, 'year'=>date('Y')]) }}" class="btn btn-primary">Evaluate</a>
+            
         </tr>
         @endforeach
         

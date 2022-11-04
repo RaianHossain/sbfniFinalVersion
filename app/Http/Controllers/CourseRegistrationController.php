@@ -18,12 +18,21 @@ class CourseRegistrationController extends Controller
         
         $student = User::where('id', auth()->user()->id)->first();
         $yearWiseInfo = Year::where('student_id', $student->id)->where('year', date('Y'))->first();
-        
-        $currentcourseslist = CurrentCourse::where('year', date('Y'))->where('course_year', $yearWiseInfo->course_year)->get();
 
-        $courses = CourseRegistration::where('student_id', auth()->user()->id)->where('year', date('Y'))->where('course_year', $yearWiseInfo->course_year)->get();
+        if(isset ($yearWiseInfo)){
+            $currentcourseslist = CurrentCourse::where('year', $yearWiseInfo->year)->get(); 
+            $courses = CourseRegistration::where('student_id', auth()->user()->id)->where('year', date('Y'))->where('course_year', $yearWiseInfo->course_year)->get(); 
+            return view('backend.courseregistrations.create', ['currentcourseslist' => $currentcourseslist, 'courses' => $courses, 'yearWiseInfo' => $yearWiseInfo]);
+        }else{
+            $currentcourseslist = CurrentCourse::where('year', date('Y'))->get();
+            $courses = CourseRegistration::where('student_id', auth()->user()->id)->where('year', date('Y'))->get();
+            return view('backend.courseregistrations.create', ['currentcourseslist' => $currentcourseslist, 'courses' => $courses]);
+        }
+        // $currentcourseslist = CurrentCourse::where('year', date('Y'))->where('course_year', $yearWiseInfo->course_year)->get();
+
+       
         // dd($courses);
-        return view('backend.courseregistrations.create', ['currentcourseslist' => $currentcourseslist, 'courses' => $courses, 'yearWiseInfo' => $yearWiseInfo]);
+       
     }
 
     public function index()
@@ -95,5 +104,12 @@ class CourseRegistrationController extends Controller
         // return response()->json($check);
         //return response()->json($current_courses);
         return [$courses, $taken_courses, $taken_teachers, $current_courses];
+    }
+
+    public function delete($course_id, $student_id)
+    {
+        $course = CourseRegistration::where('currentcourse_id', $course_id)->where('student_id', $student_id)->where('year', date('Y'))->first();
+        $course->delete();
+        return redirect()->back()->with('success', 'Success: You have successfully deleted this course');
     }
 }

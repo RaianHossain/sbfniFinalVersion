@@ -43,9 +43,18 @@
                                 <td>{{ $course->course_year }}</td>
                                 @if($yearWiseInfo->registration_done == 0)
                                 <td>
-                                    <a href="" class="btn btn-sm btn-danger">Delete</a>
+                                    <form action="{{ route(courseregistrations.destroy, $course->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                                @else
+                                <td>
+                                    <a href="" class="btn btn-sm btn-danger disabled">Delete</a>
                                 </td>
                                 @endif
+
                             </tr>
                         @endforeach
                     </tbody>

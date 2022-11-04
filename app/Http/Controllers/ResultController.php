@@ -61,12 +61,9 @@ class ResultController extends Controller
                 'practical' => $request->practical[$i],
                 'formative' => $request->formative[$i],
                 'oral' => $request->oral[$i],
-                'written_pass' => $request->written_pass[$i],
-                'practical_pass' => $request->practical_pass[$i],
-                'formative_pass' => $request->formative_pass[$i],
-                'oral_pass' => $request->oral_pass[$i],
-                'total' => $request->total[$i],
-                'grade' => $request->grade[$i],
+                'total' =>
+                $request->written[$i] + $request->practical[$i] + $request->formative[$i] + $request->oral[$i],
+                'grade' => $request->grade[$i], //need to be calculated
                 'teacher' => $request->teacher[$i],
             ]);
         }

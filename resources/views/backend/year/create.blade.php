@@ -4,7 +4,7 @@
     </x-slot>
     <x-slot name='breadCrumb'>
         <x-backend.layouts.elements.breadcrumb>
-            <x-slot name="pageHeader"> Year Input </x-slot>
+            <x-slot name="pageHeader"> Yearwise Student Entry </x-slot>
 
             <li class="breadcrumb-item"><a href="{{ route('year.index')}}">Dashboard</a></li>
             <li class="breadcrumb-item active">Add New</li>
@@ -16,7 +16,7 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Create Year Input <a class="btn btn-sm btn-info" href="{{ route('year.index') }}">List</a>
+            Show Yearwise Student <a class="btn btn-sm btn-info" href="{{ route('year.index') }}">List</a>
         </div>
         <div class="card-body">
 
@@ -26,7 +26,7 @@
                 @csrf
                 <br>
                 <label for="student_id">Select student</label>
-                <select name="student_id" class="form-control" id="student_id" >
+                <select name="student_id" class="form-control" id="student_id" required>
                     
                     <option value="">Choose One...</option>
         
@@ -38,7 +38,7 @@
                 <br/>
                 <br/>
                 <label for="course_year">Select Course Year</label>
-                <select name="course_year" class="form-control" id="course_year">
+                <select name="course_year" class="form-control" id="course_year" required>
                     <option value="">Choose One...</option>
                     
                         <option value="1st">1st Year</option>
@@ -49,7 +49,7 @@
                 <br>
 
                 <label for="section">Select Section</label>
-                <select name="section" class="form-control" id="section">
+                <select name="section" class="form-control" id="section" required>
                     <option value="">Choose One...</option>
                     
                         {{-- <option value="A">A</option> --}}
@@ -64,7 +64,7 @@
                 </select>
                 <br>
                 <label for="year">Select Year</label>
-                <select name="year" class="form-control" id="year">
+                <select name="year" class="form-control" id="year" required>
                     <option value="">Select Year</option>
                    
                         {{-- <option value="2022">2022</option>

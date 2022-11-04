@@ -31,11 +31,11 @@
         <input class="form-control" name="oral[]" type="number" id="oral" placeholder="Enter Oral Mark"/><br>
         <input class="form-control" name="formative[]" type="number" id="formative" placeholder="Enter formative Mark"/><br> 
         <input class="form-control" name="practical[]" type="number" id="practical" placeholder="Enter practical Mark"/> <br>  
-        <input class="form-control" name="written_pass[]" type="number" id="written_pass" placeholder="Enter Written Pass Mark"/><br>
+        {{-- <input class="form-control" name="written_pass[]" type="number" id="written_pass" placeholder="Enter Written Pass Mark"/><br>
         <input class="form-control" name="formative_pass[]" type="number" id="formative_pass" placeholder="Enter Formative Pass Mark"/> <br>
         <input class="form-control" name="practical_pass[]" type="number" id="practical_pass" placeholder="Enter Practical Pass Mark"/> <br>
         <input class="form-control" name="oral_pass[]" type="number" id="oral_pass" placeholder="Enter Oral Pass Mark"/><br> 
-        <input class="form-control" name="total[]" type="number" id="total" placeholder="Enter Total Mark"/> <br>    
+        <input class="form-control" name="total[]" type="number" id="total" placeholder="Enter Total Mark"/> <br>     --}}
         <input class="form-control" name="grade[]" type="number" id="grade" placeholder="Enter Grade"/> <br>  
         
         <br><br>

@@ -8,11 +8,6 @@
 
         </x-backend.layouts.elements.breadcrumb>
     </x-slot>
-    
-    @php 
-    $student_name=App\Models\Profile::where('student_id',$student_id)->first()->full_name;
-    // @dd($student_name);
-    @endphp
 
     <div class="container">      
         <p>Name: {{ $student->name ?? ' ' }}</p>
@@ -20,12 +15,15 @@
 <hr>
 <form action="{{ route('result.store') }}" method="POST">
     @csrf
-    @forelse ($courses as $course)
+    @forelse ($courses as $index => $course)
         
     
-                <input type="hidden" name="student_id" value="{{ $student_id }}">
-                <input type="hidden" name="year" value="{{ $year }}">
-                <input type="hidden" name="course_year" value="{{ $course_year }}">
+        <input type="hidden" name="student_id" value="{{ $student_id }}">
+        <input type="hidden" name="year" value="{{ $year }}">
+        <input type="hidden" name="course_year" value="{{ $course_year }}">
+        <input class="form-control" type="hidden" name="course_id[]" value="{{ $course->id }}"><br>
+        <input class="form-control" type="hidden" name="teacher[]" value="{{ $teachersWithInitials[$index] }}"><br>
+        
 
 
         <label class="form-label" for="viva"><h4>{{ $course->course_name }}</h4></label><br>
@@ -39,12 +37,12 @@
         <input class="form-control" name="oral_pass[]" type="number" id="oral_pass" placeholder="Enter Oral Pass Mark"/><br> 
         <input class="form-control" name="total[]" type="number" id="total" placeholder="Enter Total Mark"/> <br>    
         <input class="form-control" name="grade[]" type="number" id="grade" placeholder="Enter Grade"/> <br>  
-        <input class="form-control" type="hidden" name="course_id[]" value="{{ $course->id }}"><br>
-<br><br>
-@empty
+        
+        <br><br>
+    @empty
         <td colspan="8">No data found</td>
     @endforelse
-<input type="submit" class="btn btn-primary"/>
+        <input type="submit" class="btn btn-primary"/>
 </form>
 
 

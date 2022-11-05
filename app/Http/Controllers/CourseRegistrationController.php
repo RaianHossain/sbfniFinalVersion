@@ -22,6 +22,7 @@ class CourseRegistrationController extends Controller
         if(isset ($yearWiseInfo)){
             $currentcourseslist = CurrentCourse::where('year', $yearWiseInfo->year)->get(); 
             $courses = CourseRegistration::where('student_id', auth()->user()->id)->where('year', date('Y'))->where('course_year', $yearWiseInfo->course_year)->get(); 
+            // dd($courses);
             return view('backend.courseregistrations.create', ['currentcourseslist' => $currentcourseslist, 'courses' => $courses, 'yearWiseInfo' => $yearWiseInfo]);
         }else{
             $currentcourseslist = CurrentCourse::where('year', date('Y'))->get();
@@ -108,8 +109,27 @@ class CourseRegistrationController extends Controller
 
     public function delete($course_id, $student_id)
     {
-        $course = CourseRegistration::where('currentcourse_id', $course_id)->where('student_id', $student_id)->where('year', date('Y'))->first();
+        // dd([$course_id, $student_id]);
+        $yearWiseInfo = Year::where('student_id', $student_id)->where('year', date('Y'))->first();
+        $course = CourseRegistration::where('currentcourse_id', $course_id)
+                                      ->where('student_id', $student_id)
+                                      ->where('year', date('Y'))
+                                      ->where('course_year', $yearWiseInfo->course_year)
+                                      ->first();
+        // dd($course);
         $course->delete();
         return redirect()->back()->with('success', 'Success: You have successfully deleted this course');
+    }
+
+    public function save()
+    {
+        // dd("check");
+        $student_id = auth()->user()->id;
+        $year = date('Y');
+        $yearWiseInfo = Year::where('student_id', $student_id)->where('year', $year)->first();
+        $yearWiseInfo->registration_done = 1;
+        // dd($yearWiseInfo);
+        $yearWiseInfo->update();
+        return redirect()->back()->withMessage('Success: You have successfully completed course registration');
     }
 }

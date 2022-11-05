@@ -43,11 +43,12 @@
                                 <td>{{ $course->course_year }}</td>
                                 @if($yearWiseInfo->registration_done == 0)
                                 <td>
-                                    <form action="{{ route(courseregistrations.destroy, $course->id) }}" method="POST">
+                                    <a href="{{ route('course-registration-delete', ['course_id'=> $currentcourse->id, 'student_id'=>auth()->user()->id, 'year'=>date("Y") ]) }}" class="btn btn-danger btn-sm">Delete</a> 
+                                    {{-- <form action="{{ route(courseregistrations.destroy,[ 'id',$course->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                                    </form> --}}
                                 </td>
                                 @else
                                 <td>

@@ -81,7 +81,7 @@
 
                 </tbody>
             </table>
-            {{ $years->links() }}
+            {{-- {{ $years->links() }} --}}
         </div>
     </div>
 

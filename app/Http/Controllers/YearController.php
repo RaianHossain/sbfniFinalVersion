@@ -17,17 +17,18 @@ class YearController extends Controller
     {
 
         $course = Course::all();
-        $yearCollection = Year::latest();
+        $years = Year::latest()->get();
 
-        if (request('search')) {
-            $yearCollection = $yearCollection
-                ->where('year_name', 'like', '%' . request('search') . '%');
-        }
+        // if (request('search')) {
+        //     $yearCollection = $yearCollection
+        //         ->where('year_name', 'like', '%' . request('search') . '%');
+        // }
 
-        $year = $yearCollection->paginate(10);
+        // $years = $yearCollection->paginate(10);
+        // dd($years);
 
         return view('backend.year.index', [
-            'years' => $year,
+            'years' => $years,
         ]);
     }
 

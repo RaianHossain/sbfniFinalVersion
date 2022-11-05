@@ -37,6 +37,7 @@
                 <x-backend.form.input name="communication" type="number"/>
                 <x-backend.form.input name="leadership" type="number"/>
                 <x-backend.form.input name="img" type="file"/>
+                <x-backend.form.input name="password" type="password"/>
                 
                 
                 <x-backend.form.button>Save</x-backend.form.button>

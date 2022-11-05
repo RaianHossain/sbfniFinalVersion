@@ -203,6 +203,29 @@
 
             </div>
             @endcan
+             @can('teacher') 
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">List</div>
+                <a class="nav-link" href="{{ route('admin.home') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Profile
+                </a>
+              <a class="nav-link" href="
+                {{ route('result.showresults', ['student_id' => auth()->user()->id]) }}
+                ">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Show Result
+                </a>
+
+                <a class="nav-link" href="
+                {{ route('teacher.evaluation.show', ['student_id' => auth()->user()->id, 'year'=>date('Y')]) }}
+                ">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Teacher Evaluation
+                </a> 
+
+            </div>
+            @endcan
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>

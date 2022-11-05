@@ -33,20 +33,29 @@
             <form action="{{ route('teachers.update', ['teacher' => $teacher->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
-                <x-backend.form.input name="name" :value="$teacher->name"/> 
+                <x-backend.form.input name="name" :value="$teacher->name"  />
                 <x-backend.form.input name="initial" :value="$teacher->initial"/> 
                 <x-backend.form.input name="designation" :value="$teacher->designation"/>
                 <x-backend.form.input name="qualification" :value="$teacher->qualification"/>
                 <x-backend.form.textarea name="description"> 
                     {{  $teacher->description}}
-                </x-backend.form.textarea>"
-                <x-backend.form.input name="email" :value="$teacher->email"/>
+                </x-backend.form.textarea>
+                <x-backend.form.input name="email" :value="$teacher->email" />
                 <x-backend.form.input name="phone" :value="$teacher->phone"/>
                 <x-backend.form.input name="knowledge" :value="$teacher->knowledge"/> 
                 <x-backend.form.input name="experience" :value="$teacher->experience"/> 
                 <x-backend.form.input name="communication" :value="$teacher->communication"/> 
                 <x-backend.form.input name="leadership" :value="$teacher->leadership"/> 
-                <x-backend.form.input name="img" type="file" :value="$teacher->img"/>
+               
+                    <div class="form-group">
+                        <label for="img">Image</label>
+                        <input type="file" name="img" class="form-control" id="img" value="{{ $teacher->img }}">
+                    </div>
+<br>
+                <x-backend.form.input name="password" :value="$teacher->password" type="password"/>
+                    
+
+                   
 
                 <x-backend.form.button>Update</x-backend.form.button>
 

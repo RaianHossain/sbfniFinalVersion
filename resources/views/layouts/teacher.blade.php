@@ -18,7 +18,8 @@
         <div class="card-body">
           <div class="d-flex flex-column align-items-center text-center">
             @php
-            $teacher=\App\Models\Teacher::where('user_id',auth()->user()->id)->first();
+            $teacher=\App\Models\Teacher::where('email',auth()->user()->email)->first();
+            // dd($teacher);
             @endphp
             @if ($teacher->img)
               {{-- <img src="{{ asset('storage/profiles/'.$profile->image ) }}" alt="{{$profile->name }}"class="rounded-circle" width="150"> --}}
@@ -29,7 +30,8 @@
             
             <div class="mt-3">
               <h4>{{ auth()->user()->name }}</h4>
-              <p class="text-secondary mb-1">{{ auth()->user()->role_id }}</p>
+              <p class="text-secondary mb-1">Teaching Code: {{ $teacher->initial }}</p>
+              <p class="text-secondary mb-1">{{ auth()->user()->role->name }}</p>
               <p class="text-muted font-size-sm">{{ auth()->user()->email }}</p>
             </div>
           </div>
@@ -76,20 +78,19 @@
             </div>
           </div>
           <hr>
-
           <div class="row">
             <div class="col-sm-3">
               <h6 class="mb-0">Description</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              {{ $$teacher->description ?? 'Edit Profile'}}
+              {{ $teacher->description ?? 'Edit Profile'}}
             </div>
           </div>
-          <div class="row">
+          {{-- <div class="row">
             <div class="col-sm-12">
               <a class="btn btn-info " target="__blank" href="{{ route('teachers.update', ['teacher' => $teacher->id]) }}">Edit</a>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
 

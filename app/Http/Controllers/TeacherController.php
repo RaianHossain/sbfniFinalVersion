@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use App\Models\User;
 use Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Image;
 
 class TeacherController extends Controller
@@ -62,6 +64,13 @@ class TeacherController extends Controller
                 $techer->save();
             }
 
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role_id' => 2,
+            ]);
+
             return redirect()->route('teachers.index')->withMessage('Successfully Created!');
         } catch (QueryException $e) {
             return redirect()->back()->withInput()->withErrors($e->getMessage());
@@ -108,6 +117,14 @@ class TeacherController extends Controller
             }
 
             $teacher->update($requestData);
+
+            $user = User::where('email', $request->email)->first();
+            $requestUserData=[
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ];
+            $user->updated($requestUserData);
 
             return redirect()->route('teachers.index')->withMessage('Successfully Updated!');
         } catch (QueryException $e) {

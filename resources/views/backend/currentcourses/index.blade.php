@@ -51,11 +51,13 @@
                     @php $sl=0 @endphp
                     @foreach ($currentcourses as $currentcourse)
                     <tr>
+                        {{-- @dd($currentcourse->course) --}}
                         <td>{{ ++$sl }}</td>
                         <td>{{$currentcourse->year }}</td>
                         <td>{{$currentcourse->course_year }}</td>
                         <td>{{$currentcourse->course->course_name }}</td>
-                        <td>{{$currentcourse->teacher->name }}</td>
+                        
+                        <td>{{$currentcourse->teacher->name ?? ''}}</td>
                         
                         <td>
                             <a class="btn btn-info btn-sm" href="{{ route('current_courses.edit',[

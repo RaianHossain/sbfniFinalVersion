@@ -37,18 +37,19 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         //  @dd($request);
-        $this->validate($request, [
-            'course_name' => 'required',
-            'course_code' => 'required',
-            'written_pass' => 'required',
-            'oral_pass' => 'required',
-            'formative_pass' => 'required',
-            'practical_pass' => 'required',
-            'total_written' => 'required',
-            'total_oral' => 'required',
-            'total_formative' => 'required',
-        ]);
         try {
+            $this->validate($request, [
+                'course_name' => 'required',
+                'course_code' => 'required',
+                'written_pass' => 'required',
+                'oral_pass' => 'required',
+                'formative_pass' => 'required',
+                'practical_pass' => 'required',
+                'total_written' => 'required',
+                'total_oral' => 'required',
+                'total_formative' => 'required',
+            ]);
+
             Course::create([
                 'course_name' => $request->course_name,
                 'course_code' => $request->course_code,
@@ -61,13 +62,14 @@ class CourseController extends Controller
                 'total_formative' => $request->total_formative,
                 'total_practical' => $request->total_practical,
             ]);
+            
+            return redirect()->route('course.index')->withMessage('Successfully Created!');
         } catch (QueryException $e) {
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
         } catch (Exception $e) {
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
         }
 
-        return redirect()->route('course.index')->withMessage('Successfully Created!');
     }
 
 

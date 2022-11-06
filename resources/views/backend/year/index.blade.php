@@ -52,12 +52,12 @@
                     <tr>
                         <td>{{ ++$sl }}</td>
                        
-                        <td>{{ $year->user->name }}</td> 
-                        <td>{{ $year->user->reg_num }}</td>
-                        <td>{{ $year->user->roll_num }}</td>
-                        <td>{{ $year->year }}</td>  
-                        <td>{{ $year->course_year }}</td>
-                        <td>{{ $year->section }}</td>
+                        <td>{{ $year->user->name??'' }}</td> 
+                        <td>{{ $year->user->reg_num??'' }}</td>
+                        <td>{{ $year->user->roll_num ??''}}</td>
+                        <td>{{ $year->year ??''}}</td>  
+                        <td>{{ $year->course_year??'' }}</td>
+                        <td>{{ $year->section??'' }}</td>
 
                         
                         <td>

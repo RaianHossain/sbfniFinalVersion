@@ -51,6 +51,8 @@ class ResultController extends Controller
         //     array_push($course_ids, "course_id_".$i);
         // }
 
+        dd($request);
+
         for($i=0; $i<count($request->total); $i++){
             Result::create([
                 'student_id' => $request->student_id,

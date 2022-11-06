@@ -8,7 +8,7 @@
     @endphp
     <x-slot name='breadCrumb'>
         <x-backend.layouts.elements.breadcrumb>
-            <x-slot name="pageHeader"> {{ $course_year ??' ' }}  {{ $year ?? ' ' }} Result Upload  </x-slot>
+            <x-slot name="pageHeader"> {{ $course_year ??' ' }} year, {{ $year ?? ' ' }} Result Upload  </x-slot>
 
             <li class="breadcrumb-item"><a href="{{ route('year.students')}}">Dashboard</a></li>
             <li class="breadcrumb-item active">Result Upload</li>
@@ -40,6 +40,7 @@
 
 
                 <td>
+                    
                     {{--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="clicked('<?php echo $yearwisestudent->course_year ?>', '<?php echo $yearwisestudent->year ?>', '<?php echo $yearwisestudent->user->id ?>')">Upload Result</button>--}}
                     <a href="{{ route('result_getcourses', ['course_year'=> $yearwisestudent->course_year, 'year'=>$yearwisestudent->year,'student_id'=>$yearwisestudent->user->id ]) }}" class="btn btn-primary">Upload Result</a>
 

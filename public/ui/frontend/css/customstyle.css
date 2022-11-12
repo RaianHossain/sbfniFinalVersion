@@ -494,8 +494,22 @@ nav input {
     color: rgba(1, 1, 68, 0.589);
 }
 
+/* #fiji-id, #imageshowintop{
+    display: none !important;
+} */
+
 @media screen and (max-width: 700px) {
     #fiji-id, #carouselExampleControls {
         display: none !important;
     }
+
+    #fiji-id, #greetingmwssagetop{
+        display: none !important;
+    }
+    /* #fiji-id, #imageshowintop{
+        display: show !important; 
+    } */
+
+  
+    
 }

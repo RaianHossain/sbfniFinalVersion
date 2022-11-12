@@ -99,6 +99,11 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+<section id="imageshowintop">
+
+<img src="{{ asset('ui/frontend/images/slider/slide4.jpg') }}" class="img-fluid" alt="..." style="height: 200px;">
+
+</section>
 
   {{--Principal,CEO &  Chairman Section--}}
   @php
@@ -107,7 +112,7 @@
   $VICEPRINCIPAL = App\Models\GreetingMessage::where('message_by', 'VICEPRINCIPAL')->first();
 
   @endphp
-  <section class="#" style=" padding-top:20px; padding-bottom:20px; background-color: #FFF8EF; ">
+  <section class="#" style=" padding-top:20px; padding-bottom:20px; background-color: #FFF8EF; " id="greetingmwssagetop">
     <div class="row">
       <div class="col-md-4 sec2col">
         <div class="d-flex justify-content-between">
@@ -122,7 +127,7 @@
               </div>
             </a>
             <div class="title media-body p-2 mt-3">
-              <h3 class="heading  mt-3" style="margin:0 auto; ">President, SBF</h3>
+              <h3 class="mt-3" style="margin:0 auto; font-weight: bold; ">President, SBF</h3>
               <p class="">
                 @if(isset($President->greeting_messages))
                 {{ \Illuminate\Support\Str::limit($President->greeting_messages, 100, $end='...') }}
@@ -148,7 +153,7 @@
               </div>
             </a>
             <div class="title media-body p-2 mt-3">
-              <h3 class="heading  mt-3" style="margin:0 auto; ">COO, SBF-B</h3>
+              <h3 class="  mt-3" style="margin:0 auto;font-weight: bold;">COO, SBF-B</h3>
               <p class="">
                 @if(isset($COO->greeting_messages))
                 {{ \Illuminate\Support\Str::limit($COO->greeting_messages, 100, $end='...') }}
@@ -173,7 +178,7 @@
             </div>
           </a>
           <div class="title media-body p-2 mt-3">
-            <h3 class="heading  mt-3" style="margin:0 auto; "> Vice Principal, SBFNI</h3>
+            <h3 class="  mt-3" style="margin:0 auto;font-weight: bold; "> Vice Principal, SBFNI</h3>
             <p class="">
               @if(isset($VICEPRINCIPAL->greeting_messages))
               {{ \Illuminate\Support\Str::limit($VICEPRINCIPAL->greeting_messages, 100, $end='...') }}
@@ -200,7 +205,7 @@
             </div>
           </a>
           <div class="media-body p-2 mt-3">
-            <h3 class="heading text-white mt-5">Nursing</h3>
+            <h3 class=" text-white mt-5" style="font-weight: bold;">Nursing</h3>
             <p class="text-white" style="font-family: 'Tiro Devanagari Sanskrit', serif;">Nursing is a profession within the health care sector focused on the care of individuals, families, and communities so they may attain, maintain, or recover optimal health and quality of life. </p>
           </div>
         </div>
@@ -213,7 +218,7 @@
             </div>
           </a>
           <div class="media-body p-2 mt-3">
-            <h3 class="heading text-white mt-5">Admission</h3>
+            <h3 class=" text-white mt-5" style="font-weight: bold;">Admission</h3>
             <p class="text-white" style="font-family: 'Tiro Devanagari Sanskrit', serif;">The admitted student nurses role is a unique opportunity for nurses to familiarize themselves with the hospital and to work with staff outside their normal unit. </p>
           </div>
         </div>
@@ -226,7 +231,7 @@
             </div>
           </a>
           <div class="media-body p-2 mt-3">
-            <h3 class="heading text-white mt-5">Tution Fee</h3>
+            <h3 class=" text-white mt-5" style="font-weight: bold;">Tution Fee</h3>
             <p class="text-white" style="font-family: 'Tiro Devanagari Sanskrit', serif;">Tution Fees are payable every year.While a number of courses involving computers or media have been growing every year, nursing is also using technology.Tution fee is included with all the laboratory & Computer lab fees. </p>
           </div>
         </div>
@@ -239,7 +244,7 @@
             </div>
           </a>
           <div class="media-body p-2 mt-3">
-            <h3 class="heading text-white mt-5">Scholarship</h3>
+            <h3 class=" text-white mt-5" style="font-weight: bold;">Scholarship</h3>
             <p class="text-white" style="font-family: 'Tiro Devanagari Sanskrit', serif;">Scholarship in nursing can be defined as those activities that systematically advance the teaching, research, and practice of nursing through rigorous inquiry . </p>
           </div>
         </div>
@@ -461,7 +466,7 @@
         </div>
         @break($loop->iteration == 4)
         @empty
-        <p> No Events </p>
+        <p class="text-center"> No Events </p>
         @endforelse
       </div>
     </div>
@@ -591,7 +596,7 @@
       </div>
       @break($loop->iteration == 3)
       @empty
-      <p> No News </p>
+      <p class="text-center"> No News </p>
       @endforelse
     </div>
     {{-- <div class="col-xs-12 col-sm-6 col-md-4 isotope-item">
@@ -665,7 +670,7 @@
             </div>
           </div>
           @empty
-          <p> No Ranking </p>
+          <p class="text-center"> No Ranking </p>
           @endforelse
           {{-- <div class="col-3">
             <div class="card" style="width: 25rem;">
@@ -833,6 +838,14 @@
       dots[slideIndex - 1].className += " active";
       setTimeout(showSlides, 3000); // Change image every 2 seconds
     }
+  </script>
+
+  <script>
+  let imageshowintop = document.getElementById('imageshowintop');
+  imageshowintop.style.display = 'none';
+  if(window.innerWidth < 768){
+    imageshowintop.style.display = 'block';
+  }
   </script>
   <script src="{{ asset('ui/frontend/js/core.min.js') }}"></script>
   <script src="{{ asset('ui/frontend/js/script.js') }}"></script>

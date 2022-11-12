@@ -370,7 +370,7 @@ position: relative;
 
 
 
-        <div>
+        {{-- <div> --}}
             <div class="testcontainer">
                 <div class="textpostion">
                     <img class="flextwo" src="{{ asset('ui/frontend/images/history/gate.jpg') }}">
@@ -381,7 +381,7 @@ position: relative;
                     </div>
                 </div>
             </div>
-        </div>
+        {{-- </div> --}}
 
 
         <div class="careercontent">
@@ -408,7 +408,7 @@ position: relative;
         </div>
     </section>
 
-    
+
 
 
 

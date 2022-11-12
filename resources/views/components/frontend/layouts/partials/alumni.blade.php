@@ -25,7 +25,7 @@
 <div class="col-lg-12 col-sm-12">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">No Alumni Found</h5>
+            <h5 class="card-title text-center">No Alumni Found</h5>
         </div>
     </div>
 </div>

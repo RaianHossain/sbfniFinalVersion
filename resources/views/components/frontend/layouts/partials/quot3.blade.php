@@ -1,20 +1,20 @@
 <style>
-  .heading {
+  .qute-head {
     text-align: center;
     color: #454343;
     font-size: 30px;
-    font-weight: 700;
+    /* font-weight: 700; */
     position: relative;
     margin-bottom: 70px;
     text-transform: uppercase;
     z-index: 999;
   }
 
-  .white-heading {
+  .white-qute-head {
     color: #ffffff;
   }
 
-  .heading:after {
+  .qute-head:after {
     content: ' ';
     position: absolute;
     top: 100%;
@@ -23,24 +23,24 @@
     width: 180px;
     border-radius: 4px;
     transform: translateX(-50%);
-    background: url(img/heading-line.png);
+    background: url(img/qute-head-line.png);
     background-repeat: no-repeat;
     background-position: center;
   }
 
-  .white-heading:after {
-    /* background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png); */
+  .white-qute-head:after {
+    /* background: url(https://i.ibb.co/d7tSD1R/qute-head-line-white.png); */
     background-repeat: no-repeat;
     background-position: center;
   }
 
-  .heading span {
+  .qute-head span {
     font-size: 18px;
     display: block;
     font-weight: 500;
   }
 
-  .white-heading span {
+  .white-qute-head span {
     color: #ffffff;
   }
 
@@ -258,8 +258,9 @@
 <section class="testimonial text-center">
   <div class="container">
 
-    <div class="heading white-heading ">
-      Guest say about us
+    <div class="white-qute-head " >
+      <h2 class="white-qute-head " style="font-weight: bold; front-size: 200px;">Guest say about us</h2>
+      
     </div>
     <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
 

@@ -101,6 +101,12 @@
   </div>
 
   {{--Principal,CEO &  Chairman Section--}}
+  @php
+  $President = App\Models\GreetingMessage::where('message_by', 'President')->first();
+  $COO = App\Models\GreetingMessage::where('message_by', 'COO')->first();
+  $VICEPRINCIPAL = App\Models\GreetingMessage::where('message_by', 'VICEPRINCIPAL')->first();
+
+  @endphp
   <section class="#" style=" padding-top:20px; padding-bottom:20px; background-color: #FFF8EF; ">
     <div class="row">
       <div class="col-md-4 sec2col">
@@ -108,12 +114,22 @@
           <div class="media block-6 d-block text-center">
             <a href="#">
               <div class="box  d-flex justify-content-center align-items-center mt-5 mb-3">
+                @if(isset($President->image))
+                <img src="{{ asset('storage/greeting_message/'.$President->image) }}"class="d-block  mx-auto mt-2 " alt="..." style=" width:150px; height:150px;  border-radius:50%; border:2px solid #e2b75a">
+                @else
                 <img src="{{ asset('ui/frontend/images/SBF_P.png') }}" class="d-block  mx-auto mt-2 " alt="..." style=" width:150px; height:150px;  border-radius:50%; border:2px solid #e2b75a">
+              @endif
               </div>
             </a>
             <div class="title media-body p-2 mt-3">
               <h3 class="heading  mt-3" style="margin:0 auto; ">President, SBF</h3>
-              <p class="">SBF nursing institute, lalmonirhat is one of the most benevolent private nursing institute in bangladesh. It is affiliated by bangladesh nursing and midwifery council. This institute was established for mankind in 2019. <a href="{{ route('guestmessage') }}">....More</a></p>
+              <p class="">
+                @if(isset($President->greeting_messages))
+                {{ \Illuminate\Support\Str::limit($President->greeting_messages, 100, $end='...') }}
+                @else
+                SBF nursing institute, lalmonirhat is one of the most benevolent private nursing institute in bangladesh. It is affiliated by bangladesh nursing and midwifery council. This institute was established for mankind in 2019. 
+                @endif
+                <a href="{{ route('guestmessage') }}">....More</a></p>
             </div>
           </div>
           <div class="vertical"></div>
@@ -124,12 +140,22 @@
           <div class="media block-6 d-block text-center">
             <a href="#">
               <div class="box  d-flex justify-content-center align-items-center mt-5 mb-3">
+                @if(isset($COO->image))
+                <img src="{{ asset('storage/greeting_message/'.$COO->image) }}"class="d-block  mx-auto mt-2 " alt="..." style=" width:150px; height:150px;  border-radius:50%; border:2px solid #e2b75a">
+                @else
                 <img src="{{ asset('ui/frontend/images/Hosne_Ara_Begum_ndc.jpg') }}" class="d-block  mx-auto mt-2 " alt="..." style=" width:150px; height:150px;  border-radius:50%; border:2px solid #e2b75a">
+              @endif
               </div>
             </a>
             <div class="title media-body p-2 mt-3">
               <h3 class="heading  mt-3" style="margin:0 auto; ">COO, SBF-B</h3>
-              <p class="">SBF nursing institute, lalmonirhat is one of the most benevolent private nursing institute in bangladesh. It is affiliated by bangladesh nursing and midwifery council. This institute was established for mankind in 2019. <a href="{{ route('guestmessage_coo') }}">....More</a></p>
+              <p class="">
+                @if(isset($COO->greeting_messages))
+                {{ \Illuminate\Support\Str::limit($COO->greeting_messages, 100, $end='...') }}
+                @else
+                SBF nursing institute, lalmonirhat is one of the most benevolent private nursing institute in bangladesh. It is affiliated by bangladesh nursing and midwifery council. This institute was established for mankind in 2019. 
+                @endif
+                <a href="{{ route('guestmessage_coo') }}">....More</a></p>
             </div>
           </div>
           <div class="vertical"></div>
@@ -139,12 +165,22 @@
         <div class="media block-6 d-block text-center">
           <a href="#">
             <div class="box  d-flex justify-content-center align-items-center mt-5 mb-3">
+              @if(isset($VICEPRINCIPAL->image))
+              <img src="{{ asset('storage/greeting_message/'.$VICEPRINCIPAL->image) }}"class="d-block  mx-auto mt-2 " alt="..." style=" width:150px; height:150px;  border-radius:50%; border:2px solid #e2b75a">
+              @else
               <img src="{{ asset('ui/frontend/images/SBFNI_VP.png') }}" class="d-block  mx-auto mt-2 " alt="..." style=" width:150px; height:150px;  border-radius:50%; border:2px solid #e2b75a">
+            @endif
             </div>
           </a>
           <div class="title media-body p-2 mt-3">
             <h3 class="heading  mt-3" style="margin:0 auto; "> Vice Principal, SBFNI</h3>
-            <p class="">SBF nursing institute, lalmonirhat is one of the most benevolent private nursing institute in bangladesh. It is affiliated by bangladesh nursing and midwifery council. This institute was established for mankind in 2019. <a href="{{ route('guestmessage_vp') }}">....More</a></p>
+            <p class="">
+              @if(isset($VICEPRINCIPAL->greeting_messages))
+              {{ \Illuminate\Support\Str::limit($VICEPRINCIPAL->greeting_messages, 100, $end='...') }}
+              @else
+              SBF nursing institute, lalmonirhat is one of the most benevolent private nursing institute in bangladesh. It is affiliated by bangladesh nursing and midwifery council. This institute was established for mankind in 2019. 
+               @endif
+              <a href="{{ route('guestmessage_vp') }}">....More</a></p>
           </div>
         </div>
       </div>

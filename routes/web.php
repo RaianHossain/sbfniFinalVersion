@@ -24,6 +24,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\YearController;
 use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\GreetingMessageController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
@@ -272,6 +273,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/course_registration/save', [CourseRegistrationController::class, 'save'])->name('course-registration-save');
 
     Route::get('/admin/get-courses/{course_year}/{year}/{student_id}', [ResultController::class, 'getCourses'])->name('result_getcourses');
+
+    //greetingmessages
+
+    Route::resource('/admin/greetingmessages', GreetingMessageController::class);
+
+    
+
 });
 
 Route::resource('/admin/message', MessageController::class);

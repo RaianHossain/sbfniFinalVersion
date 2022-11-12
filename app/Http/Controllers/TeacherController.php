@@ -169,6 +169,7 @@ class TeacherController extends Controller
 
     public function delete($id)
     {
+        
         $teacher = Teacher::onlyTrashed()->findOrFail($id);
         unlink(public_path('storage/teachers/' . $teacher->img));
         $teacher->forceDelete();

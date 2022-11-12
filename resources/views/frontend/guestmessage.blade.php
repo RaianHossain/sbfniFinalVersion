@@ -12,7 +12,9 @@
             </div>
         </div>
     </section>
-
+@php
+  $President = App\Models\GreetingMessage::where('message_by', 'President')->first();
+@endphp
 {{--Principal,CEO &  Chairman Section--}}
 <section class="#" style=" padding-top:20px; padding-bottom:20px; background-color: #FFF8EF; ">
     <div class="row">
@@ -21,12 +23,13 @@
           <div class="media block-6 d-block text-center">
             <a href="#">
               <div class="box  d-flex justify-content-center align-items-center mt-5 mb-3">
-                <img src="{{ asset('ui/frontend/images/SBF_p.jpeg') }}" class="d-block  mx-auto mt-2 " alt="..." style=" width:150px; height:150px;  border-radius:50%; border:2px solid #e2b75a">
+                <img src="{{ asset('storage/greeting/' . $President->img ?? '') }}" class="d-block  mx-auto mt-2 " alt="..." style=" width:150px; height:150px;  border-radius:50%; border:2px solid #e2b75a">
               </div>
             </a>
             <div class="title media-body p-2 mt-3">
               <h3 class="heading  mt-3" style="margin:0 auto; ">President</h3>
-              <p class="">SBF nursing institute lalmunirhot is one of the most benevolent private nursing institute in bangladesh. It is affiliated by bangladesh nursing and midwifery council. This institute was established for mankind in 2019. </p>
+              <p class="mb-0" style="margin:0 auto; font-size: 14px; color: #000000; font-weight: 500;">{{ $President->name ?? '' }}</p>
+              <p class="">{{ $President->greeting_messages ?? '' }} </p>
             </div>
           </div>
           <div class="vertical"></div>

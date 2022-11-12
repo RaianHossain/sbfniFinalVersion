@@ -18,11 +18,13 @@ class CourseRegistrationController extends Controller
         
         $student = User::where('id', auth()->user()->id)->first();
         $yearWiseInfo = Year::where('student_id', $student->id)->where('year', date('Y'))->first();
+        //dd($yearWiseInfo);
 
         if(isset ($yearWiseInfo)){
-            $currentcourseslist = CurrentCourse::where('year', $yearWiseInfo->year)->get(); 
+            $currentcourseslist = CurrentCourse::where('year', $yearWiseInfo->year)
+                                                ->where('course_year',$yearWiseInfo->course_year)->get(); 
             $courses = CourseRegistration::where('student_id', auth()->user()->id)->where('year', date('Y'))->where('course_year', $yearWiseInfo->course_year)->get(); 
-            // dd($courses);
+            //dd($currentcourseslist);
             return view('backend.courseregistrations.create', ['currentcourseslist' => $currentcourseslist, 'courses' => $courses, 'yearWiseInfo' => $yearWiseInfo]);
         }else{
             $currentcourseslist = CurrentCourse::where('year', date('Y'))->get();

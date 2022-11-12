@@ -36,7 +36,7 @@
                 <x-backend.form.input name="experience" type="number"/>
                 <x-backend.form.input name="communication" type="number"/>
                 <x-backend.form.input name="leadership" type="number"/>
-                <x-backend.form.input name="img" type="file"/>
+                <input name="img" type="file"/>
                 <x-backend.form.input name="password" type="password"/>
                 
                 

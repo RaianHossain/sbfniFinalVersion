@@ -45,13 +45,14 @@ class ResultController extends Controller
             'year' => 'required',
             'course_year' => 'required',
         ]);
+        // dd($request);
         // dd($request->teacher[0]);
         // $course_ids = [];
         // for($i = 0; $i<count($request->total); $i++){
         //     array_push($course_ids, "course_id_".$i);
         // }
 
-        for($i=0; $i<count($request->total); $i++){
+        for($i=0; $i<count($request->grade); $i++){
             Result::create([
                 'student_id' => $request->student_id,
                 'course_id' => $request->course_id[$i],

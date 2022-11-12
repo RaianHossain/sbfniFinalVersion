@@ -71,7 +71,7 @@
         }
 
         p {
-            padding: 1em;
+            /* padding: 1em; */
             font-family: sans-serif;
             line-height: 1.5em;
             margin-top: 1.30952381em;

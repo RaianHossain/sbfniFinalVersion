@@ -70,8 +70,10 @@ class GreetingMessageController extends Controller
         ]);
     }
 
-    public function update(Request $request, GreetingMessage $greetingmessages)
+    public function update(Request $request, GreetingMessage $greetingmessage)
     {
+        // dd($request->all());
+        $greetingmessage = GreetingMessage::findOrFail($greetingmessage->id);
         try {
             $requestData = [
                 'message_by' => $request->message_by,
@@ -80,15 +82,12 @@ class GreetingMessageController extends Controller
             ];
 
             if ($request->hasFile('img')) {
-                $img = $request->file('img');
-                $name = time() . '.' . $img->getClientOriginalExtension();
-                $destinationPath = storage_path('/app/public/greeting/');
-                $img->move($destinationPath, $name);
-                $greetingmessages->img = $name;
-
+                $requestData['img'] = $this->uploadimg(request()->file('img'));
+            } else {
+                $requestData['img'] = $greetingmessage->img;
             }
 
-            $greetingmessages->update($requestData);
+            $greetingmessage->update($requestData);
 
             return redirect()->route('greetingmessages.index')->withMessage('Successfully Updated!');
         } catch (QueryException $e) {

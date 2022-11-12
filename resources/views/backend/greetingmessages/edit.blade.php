@@ -49,7 +49,7 @@
                 </select>
 
 
-                <x-backend.form.input name="img" type="file" :value="$greetingmessage->first()->image" />
+                <x-backend.form.input name="img" type="file" :value="$greetingmessage->first()->img" />
 
                 <x-backend.form.textarea name="greeting_messages">
                     {{ $greetingmessage->first()->greeting_messages }}

@@ -101,7 +101,7 @@
   </div>
 <section id="imageshowintop">
 
-<img src="{{ asset('ui/frontend/images/slider/slide4.jpg') }}" class="img-fluid" alt="..." style="height: 200px;">
+<img src="{{ asset('ui/frontend/images/slider/slide4mobile.jpg') }}" class="img-fluid" alt="..." style="height: 200px;">
 
 </section>
 

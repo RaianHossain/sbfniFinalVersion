@@ -13,7 +13,7 @@
         </div>
     </section>
 
-    <section style="margin:200px;">
+    <section class="container">
         <h3 class="page-headings" style="padding: 10px 10px">Guidelines:</h3>
         <p class="page-para">The Applicants who meet the following criteria will be eligible to enter into the Diploma in Nursing Science and Midwifery:
             a. Entry qualification: The applicants must have passed both SSC & HSC examinations from any discipline from any educational Board of Intermediate and Secondary Education in Bangladesh. Students will be selected on merit basis. Merit score will be determined from cumulative result of GPA SSC, HSC& admission test which will be decided by admission committee.

@@ -13,7 +13,8 @@
             </div>
         </div>
     </section>
-<section style="margin:200px;">
+<section>
+     <div class="container">
    <section style="margin:30px; padding:0px 0px 20px 20px">
    <h3 class="page-headings" style="color:#002833;">Facilities of SBFNI Nursing Institute</h3>
    <div class="page-para">
@@ -29,6 +30,7 @@
        10. Healthy and quality food is provided in the campus canteen.<br>
        11. Adequate sports and recreational facilities.<br>
        12. Noise-free campus.<br>
+   </div>
    </div>
 </section>
 <section class="section novi-background bg-cover section-70 section-md-114 bg-default">
@@ -191,10 +193,12 @@
 </section>
 
 <section style="margin:5px;padding:0px 20px 20px 20px">
+     <div class="container">
    <h3 class="page-headings">Extra Facilities of SBFNI Nursing Institute</h3>
    <p class="page-para">Students will not need to buy any books. There is also a set of high quality beds, reading tables, reading chairs and mattress pillows for the students staying in the hostel. 5% quota for poor and meritorious students is taught for free. Moreover, if a student can get very good result in 1st year final examination, then his next course fee is completely waived. Even many students who are very good at studying stay completely free. So there are many benefits to studying here. There is a nice management and board of directors who are very efficient and liberal. While pursuing Diploma in Nursing Science and Midwifery degree from SBF Nursing Institute, Lalmonirhat, there are many courses including Post Basic BSc in Nursing and MSc in Nursing or MPH. There are many job opportunities in this profession at home and abroad, including getting a doctorate degree in nursing while working.
 
    </p>
+   </div>
    </section>
    </section>
 

@@ -85,7 +85,7 @@
                                 <div class="offset-lg-top-30">
                                     <p class="page-para">The curriculum is dynamic with provision for incorporating emerging health problems and changing health policies as well as latest advancement in health sciences. The Diploma in Nursing Science and  Midwifery curriculum is designed for BNMC recognized institutions and incorporate(1) General  courses to prepare students to understand the world, understand human behaviors and well-behave in  the society (2) Foundation courses to furnish students with essential knowledge relevant to nursing and  midwifery and (3) Professional courses for nursing and midwifery specific courses. The courses are sequenced from year one to year three, from simple to complex, with an attempt to increase students’ competencies overtime.</p>
                                 </div>
-                                <div class="offset-top-30" style="padding: 20px 10px"><img class="img-responsive reveal-inline-block" src="{{ asset('ui/frontend/images/course/SBF4.JPG') }}" width="770" height="480" alt=""></div>
+                                <div class="offset-top-30" style="padding: 20px 10px"><img class="img-responsive reveal-inline-block" src="{{ asset('ui/frontend/images/course/SBF4.jpg') }}" width="770" height="480" alt=""></div>
                                 <div class="offset-top-30" style="padding: 10px 10px">
                                     <h3 class="page-headings">Title of courses:</h3>
                                     <ol>
@@ -298,7 +298,7 @@
                             <div class="inset-lg-right-60">
                                 <h3 class="page-headings veil reveal-lg-block">Course Duration</h3>
                                 <div class="hr divider bg-madison hr-sm-left-0 veil reveal-lg-block"></div>
-                                <div class="offset-lg-top-30" style="padding: 10px 10px"><img class="img-responsive reveal-inline-block" src="{{ asset('ui/frontend/images/course/SBF5.JPG') }}" width="770" height="480" alt=""></div>
+                                <div class="offset-lg-top-30" style="padding: 10px 10px"><img class="img-responsive reveal-inline-block" src="{{ asset('ui/frontend/images/course/SBF5.jpg') }}" width="770" height="480" alt=""></div>
                                 <div class="offset-top-30">
                                     <p class="page-para">There should be a minimum period of three years of education programmer. Total hours are 5112 in the three years course. The academic year will start from January in each year. After completion of the program every student has to perform 06(six) months internship in an appropriate clinical areas/hospitals according to logbook. On the successful completion of the course, the student is required to take the BNMC comprehensive examination for licensing as a registered nurse. BNMC will issue professional License and academic certificate.</p>
                                     <h3 class ="page-headings" style="padding: 10px 10px">Student registration</h3>

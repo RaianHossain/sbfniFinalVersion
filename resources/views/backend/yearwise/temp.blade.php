@@ -2,6 +2,16 @@
     <div class="container mt-5">
         <label for="year_select">Year: </label>
         <select type="string" name="year_select" class="form-control" id="year_select">
+            @php
+            function yearDropDown($n){
+    $currentYear = date('Y');
+    $years[0] =$currentYear;
+    for($i = 1; $i <= $n; $i++){
+        $years[$i] = $currentYear - $i;
+    }
+    return $years;
+}
+            @endphp
             @foreach (yearDropDown(4) as $year)
             <option value="{{ $year }}">{{ $year }}</option>
             @endforeach

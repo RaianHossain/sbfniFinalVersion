@@ -13,9 +13,9 @@
             </div>
         </section>
 
-        <section style="margin:200px;">
+        <section >
                             
-        <div>
+        <div class="container">
                             <div class="inset-lg-right-60">
                                 <h3 class="page-headings veil reveal-lg-block">Curriculum Structure</h3>
                                 <div class="hr divider bg-madison hr-sm-left-0 veil reveal-lg-block"></div>

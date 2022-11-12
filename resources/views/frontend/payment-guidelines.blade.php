@@ -13,7 +13,7 @@
         </div>
     </section>
 
-    <section style="margin:200px;">
+    <section class="container">
         <h3 class="page-headings" style="padding: 10px 10px">Payment Guidelines:</h3>
         <p class="page-para">Our office is on the fifth floor. Academic building. You have to come to the office room and deposit money in the account section and if anyone pays money to our account number from any branch of Mercantile Bank, we will update the register as soon as the deposit slip is paid to us.
         </p>

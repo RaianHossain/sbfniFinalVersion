@@ -76,7 +76,7 @@ class ResultController extends Controller
         $firstYearResults = Result::where('student_id', $student_id)->where('course_year', '1st')->get();
         $secondYearResults = Result::where('student_id', $student_id)->where('course_year', '2nd')->get();
         $thirdYearResults = Result::where('student_id', $student_id)->where('course_year', '3rd')->get();
-        // dd($firstYearResults);
+        //dd($firstYearResults);
         return view('backend.result.show', compact('firstYearResults', 'secondYearResults', 'thirdYearResults'));
     }
 }

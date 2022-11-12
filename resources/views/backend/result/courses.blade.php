@@ -36,7 +36,7 @@
         <input class="form-control" name="practical_pass[]" type="number" id="practical_pass" placeholder="Enter Practical Pass Mark"/> <br>
         <input class="form-control" name="oral_pass[]" type="number" id="oral_pass" placeholder="Enter Oral Pass Mark"/><br> 
         <input class="form-control" name="total[]" type="number" id="total" placeholder="Enter Total Mark"/> <br>     --}}
-        <input class="form-control" name="grade[]" type="number" id="grade" placeholder="Enter Grade"/> <br>  
+        <input class="form-control" name="grade[]" type="number" id="grade" placeholder="Enter Grade" min="0" max="4"/> <br>  
         
         <br><br>
     @empty

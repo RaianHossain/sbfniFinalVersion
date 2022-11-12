@@ -123,6 +123,7 @@ class YearController extends Controller
     public function showFirstYearASection($course_year, $year)
     {
         $yearwisestudents = Year::where('course_year', '=', $course_year)->where('year', '=', $year)->get();
+        //dd($yearwisestudents);
         return view('backend.yearwise.yearwisestudent', ['yearwisestudents' => $yearwisestudents]);
     }
 }

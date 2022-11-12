@@ -45,15 +45,14 @@ class ResultController extends Controller
             'year' => 'required',
             'course_year' => 'required',
         ]);
+        // dd($request);
         // dd($request->teacher[0]);
         // $course_ids = [];
         // for($i = 0; $i<count($request->total); $i++){
         //     array_push($course_ids, "course_id_".$i);
         // }
 
-        // dd($request);
-
-        for($i=0; $i<count($request->total); $i++){
+        for($i=0; $i<count($request->grade); $i++){
             Result::create([
                 'student_id' => $request->student_id,
                 'course_id' => $request->course_id[$i],
@@ -77,7 +76,7 @@ class ResultController extends Controller
         $firstYearResults = Result::where('student_id', $student_id)->where('course_year', '1st')->get();
         $secondYearResults = Result::where('student_id', $student_id)->where('course_year', '2nd')->get();
         $thirdYearResults = Result::where('student_id', $student_id)->where('course_year', '3rd')->get();
-        // dd($firstYearResults);
+        //dd($firstYearResults);
         return view('backend.result.show', compact('firstYearResults', 'secondYearResults', 'thirdYearResults'));
     }
 }

@@ -79,8 +79,11 @@
                     @endforeach
                 </ul>
                 </div>
-            @else
+            
+            @elseif(isset($yearWiseInfo) && $yearWiseInfo->registration_done == 1)
                 <p>Course Registration Done</p>
+            @else
+                <p>You are not eligible for registration yet.</p>
             @endif
 
         </div>

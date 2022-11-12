@@ -32,10 +32,10 @@
         <th scope="row">{{ ++$sl }}</th>
         <td>{{ $firstYearResult->course->course_name }}</td>
         <td>{{ $firstYearResult->teacher }}</td>
-        <td>{{ $firstYearResult->formative }} / {{ $firstYearResult->formative_pass }}</td>
-        <td>{{ $firstYearResult->written }} / {{ $firstYearResult->written_pass }}</td>
-        <td>{{ $firstYearResult->oral }} / {{ $firstYearResult->oral_pass }}</td>        
-        <td>{{ $firstYearResult->practical }} / {{ $firstYearResult->practical_pass }}</td>
+        <td>{{ $firstYearResult->formative }} / {{ $firstYearResult->course->formative_pass }}</td>
+        <td>{{ $firstYearResult->written }} / {{ $firstYearResult->course->written_pass }}</td>
+        <td>{{ $firstYearResult->oral }} / {{ $firstYearResult->course->oral_pass }}</td>        
+        <td>{{ $firstYearResult->practical }} / {{ $firstYearResult->course->practical_pass }}</td>
         <td>{{ $firstYearResult->total }}</td>
         <td>{{ $firstYearResult->grade }}</td>
         </tr>

@@ -57,6 +57,7 @@
                         <td>{{ $currentcourse->course_year }}</td>
 
                         <td>
+                            
                             <a href="{{ route('teacher.evaluation.showteacherevaluation', ['teacher_id'=>$currentcourse->teacher->id, 'year'=>$currentcourse->year, 'currentcourse_id'=>$currentcourse->id]) }}" class="btn btn-info">Show</a>
                         </td>
 

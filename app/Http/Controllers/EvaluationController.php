@@ -15,6 +15,7 @@ class EvaluationController extends Controller
     {
         $courses = Course::all();
         $coursesTaken = CourseRegistration::where('student_id', $student_id)->where('year', $year)->get();
+        
 
         return view('backend.evaluation.show', compact('courses', 'coursesTaken', 'student_id', 'year'));
     }
@@ -42,9 +43,11 @@ class EvaluationController extends Controller
         if($request->all() == null){
             return redirect()->back()->withErrors('Please fill all the fields');
         }
-         if(Evaluation::where('id', $request->currentcourse_id)->where('teacher_id', $request->teacher_id)->exists()){
-            return redirect()->route('teacher.evaluation.show', [$request->student_id, $request->year])->withErrors( 'You have already evaluated this teacher');
-        }
+        $evalutionCheck = Evaluation::where('id', $request->currentcourse_id)->where('teacher_id', $request->teacher_id)->exists();
+
+        //  if($evalutionCheck){
+        //     return redirect()->route('teacher.evaluation.show', [$request->student_id, $request->year])->withErrors( 'You have already evaluated this teacher');
+        // }
 
         if(auth()->user()->profile->current_year == null){
             return redirect()->route('teacher.evaluation.show', [$request->student_id, $request->year])->withErrors( 'You have not registered for the current year');

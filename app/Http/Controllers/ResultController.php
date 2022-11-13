@@ -7,6 +7,7 @@ use App\Models\CourseRegistration;
 use App\Models\CurrentCourse;
 use App\Models\Result;
 use App\Models\User;
+use App\Models\Year;
 use Illuminate\Http\Request;
 
 class ResultController extends Controller
@@ -68,7 +69,10 @@ class ResultController extends Controller
                 'teacher' => $request->teacher[$i],
             ]);
         }
-        return redirect()->back();
+        // return redirect()->route('year.students')->withMessage( 'Result added successfully');
+        $yearwisestudents = Year::where('course_year', '=', $request->course_year)->where('year', '=', $request->year)->get();
+        //dd($yearwisestudents);
+        return view('backend.yearwise.yearwisestudent', ['yearwisestudents' => $yearwisestudents])->with('success', 'Result added successfully');
     }
 
     public function showResults($student_id)

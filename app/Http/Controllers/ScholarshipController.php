@@ -41,7 +41,7 @@ class ScholarshipController extends Controller
     {
         //  @dd($request);
         $this->validate($request, [
-            'scholarship_name' => 'required',
+            // 'scholarship_name' => 'required',
             'scholarship_commitment' => 'required',
             'doner_name' => 'required',
         ]);

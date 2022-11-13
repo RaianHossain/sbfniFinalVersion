@@ -23,7 +23,7 @@
 
         .containimage {
             height: 500px;
-            overflow: hidden;
+            overflow: auto;
         }
 
         .containimage img {
@@ -33,7 +33,7 @@
 
         .imageflex {
             width: 100%;
-            overflow: hidden;
+            overflow: auto;
         }
 
 
@@ -41,7 +41,7 @@
             height: 500px;
             width: 100%;
             margin: auto;
-            overflow: hidden;
+            overflow: auto;
         }
 
         div.overlay {
@@ -144,7 +144,7 @@ position: relative;
 
         .flextwo {
             width: 100%;
-            overflow: hidden;
+            overflow: auto;
         }
 
         .ctc {
@@ -230,7 +230,7 @@ position: relative;
             width: 240px;
             float: center;
             color: white;
-            overflow: hidden;
+            overflow: auto;
             display: inline-block;
             background-color: #498cbc;
             border: 2px solid white;
@@ -322,6 +322,7 @@ position: relative;
             margin-left: 0px !important;
         }
     </style>
+    <section>
     <div class="cpbody">
         <div class="positiontest">
             <!-- image gallery -->
@@ -341,7 +342,7 @@ position: relative;
         </div>
     </div>
 
-
+</section>
     <section>
         <div class="careercontent">
             <h2 class="page-headings">Our Mission</h2>

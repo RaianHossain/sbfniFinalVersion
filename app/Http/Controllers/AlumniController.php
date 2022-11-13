@@ -41,9 +41,9 @@ class AlumniController extends Controller
         //  @dd($request);
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'image' => 'required',
+            // 'email' => 'required|email',
+            // 'phone' => 'required',
+            // 'image' => 'required',
         ]);
         try {
             Alumni::create([

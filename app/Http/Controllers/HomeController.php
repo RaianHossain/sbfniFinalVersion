@@ -7,6 +7,7 @@ use App\Models\Event;
 use App\Models\Message;
 use App\Models\News;
 use App\Models\Notice;
+use App\Models\Ranking;
 use App\Models\Teacher;
 use App\Models\Scholarship;
 use Illuminate\Http\Request;
@@ -190,6 +191,12 @@ class HomeController extends Controller
     public function download()
     {
         return view('frontend.fileupload');
+    }
+
+    public function home_ranking()
+    {
+        $rankings = Ranking::all();
+        return view('frontend.ranking', ['rankings' => $rankings]);
     }
 
 }

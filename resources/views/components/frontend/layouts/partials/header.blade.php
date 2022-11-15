@@ -39,7 +39,7 @@
           <li class="me-3 pt-1"><a href="{{ route('home') }}">Home</a></li>
 
           <li class="pt-1">
-            <a href="{{ route('about') }}" class="desktop-item">About</a>
+            <a href="#" class="desktop-item">About</a>
             <input type="checkbox" id="showDrop">
             <label for="showDrop" class="mobile-item">About</label>
             <ul class="drop-menu">
@@ -51,7 +51,7 @@
 
 
           <li class="pt-1">
-            <a href="{{ route('courses') }}" class="desktop-item me-3">Academics</a>
+            <a href="#" class="desktop-item me-3">Academics</a>
             <input type="checkbox" id="showMega">
             <label for="showMega" class="mobile-item">Academics</label>
             <div class="mega-box">
@@ -80,7 +80,7 @@
                   <ul class="mega-links">
                     <li><a href="{{ route('labothers') }}">Laboratory</a></li>
                     <li><a href="{{ route('labothers') }}">Campus</a></li>
-                    <li><a href="{{ route('labothers') }}">Ranking</a></li>
+                    <li><a href="{{ route('home_ranking') }}">Ranking</a></li>
                   </ul>
                 </div>
               </div>

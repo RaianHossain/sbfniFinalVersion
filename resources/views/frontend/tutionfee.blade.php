@@ -14,7 +14,7 @@
     </section>
 
     <section class="container">
-        <h3 class="page-headings text-center pb-5" >Tution Fee</h3>
+        <h3 class="page-headings text-center pb-5 pt-3" >Tution Fee</h3>
         <hr>
         <table class="page-para table table-striped table-hover">
             <tbody>

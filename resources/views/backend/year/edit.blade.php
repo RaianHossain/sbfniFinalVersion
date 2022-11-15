@@ -5,7 +5,7 @@
 
     <x-slot name='breadCrumb'>
         <x-backend.layouts.elements.breadcrumb>
-            <x-slot name="pageHeader"> Year Input </x-slot>
+            <x-slot name="pageHeader"> Yearwise Student Entry </x-slot>
 
             <li class="breadcrumb-item"><a href="{{ route('year.index')}}">Dashboard</a></li>
             <li class="breadcrumb-item active">Edit</li>
@@ -64,7 +64,9 @@
                             <script>
                                 var section = ['A','B','C','D','E'];
                                 for(var i = 0; i < section.length; i++){
-                                    document.write("<option value='"+section[i]+"'>"+section[i]+"</option>");
+                                    document.write(
+                                    "<option value='"+section[i]+"' {{ $single_year->section == section[i] ? 'selected' : '' }}>"+section[i]+"</option>"
+                                    );
                                 }
                             </script>
 
@@ -84,7 +86,7 @@
                         var n = d.getFullYear();
                         var i = n;
                         for(i = n+1; i > n-10; i--){
-                            document.write("<option value='"+i+"'>"+i+"</option>");
+                            document.write("<option value='"+i+"' {{ $single_year->year == i ? 'selected' : '' }}>"+i+"</option>");
                         }
                     </script>
                 </select>

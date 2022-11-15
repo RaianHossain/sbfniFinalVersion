@@ -21,11 +21,11 @@
                                 <div class="cell-sm-4">
                                     <article class="post-news"><a href="{{ route('news_details', ['id' => $news->id]) }}"><img class="img-responsive" src="{{ asset('storage/news/'.$news->img2) }}" width="370" height="240" alt=""></a>
                                         <div class="post-news-body">
-                                            <h6><a href="{{ route('news_details', ['id' => $news->id]) }}">{{ $news->title }}</a></h6>
+                                            <h6><a href="{{ route('news_details', ['id' => $news->id]) }}">{{ Str::limit($news->title, 120) }}</a></h6>
                                             <div class="offset-top-20">
-                                                <p>{{ $news->script1 }}</p>
+                                                <p>{{ Str::limit($news->script1, 150) }}</p>
                                             </div>
-                                            <div class="post-news-meta offset-top-20"><span class="icon novi-icon icon-xs mdi mdi-calendar-clock text-middle text-madison"></span><span class="text-middle inset-left-10 text-italic text-black">{{ $news->created_at->diffForHumans() }}</span></div>
+                                            <div class="post-news-meta offset-top-20 pt-3"><span class="icon novi-icon icon-xs mdi mdi-calendar-clock text-middle text-madison"></span><span class="text-middle inset-left-10 text-italic text-black ">{{ $news->created_at->diffForHumans() }}</span></div>
                                         </div>
                                     </article>
                                 </div>

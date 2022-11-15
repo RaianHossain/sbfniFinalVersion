@@ -6,9 +6,9 @@
 
     <x-slot name='breadCrumb'>
         <x-backend.layouts.elements.breadcrumb>
-            <x-slot name="pageHeader"> Course </x-slot>
+            <x-slot name="pageHeader"> Current Courses </x-slot>
 
-            <li class="breadcrumb-item"><a href="{{ route('course.index')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('current_courses.index')}}">Dashboard</a></li>
             <li class="breadcrumb-item active">Edit</li>
 
         </x-backend.layouts.elements.breadcrumb>
@@ -17,7 +17,7 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Edit Course <a class="btn btn-sm btn-info" href="{{ route('course.index') }}">List</a>
+            Edit Course <a class="btn btn-sm btn-info" href="{{ route('current_courses.index') }}">List</a>
         </div>
         <div class="card-body">
 
@@ -68,9 +68,9 @@
                 <select name="course_year" id="course_year" class="form-select form-select-lg mb-3"
                     aria-label=".form-select-lg example" required>
                     <option value="">Choose One</option>
-                    <option value="1st" {{ $currentcourse->course_year == '1st Year' ? 'selected' : '' }}>1st Year</option>
-                    <option value="2nd" {{ $currentcourse->course_year == '2nd Year' ? 'selected' : '' }}>2nd Year</option>
-                    <option value="3rd" {{ $currentcourse->course_year == '3rd Year' ? 'selected' : '' }}>3rd Year</option>
+                    <option value="1st" {{ $currentcourse->course_year == '1st' ? 'selected' : '' }}>1st Year</option>
+                    <option value="2nd" {{ $currentcourse->course_year == '2nd' ? 'selected' : '' }}>2nd Year</option>
+                    <option value="3rd" {{ $currentcourse->course_year == '3rd' ? 'selected' : '' }}>3rd Year</option>
                 </select>
                 
                 <x-backend.form.button>Update</x-backend.form.button>

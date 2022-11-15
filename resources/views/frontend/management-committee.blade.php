@@ -1,5 +1,5 @@
 <x-frontend.layouts.master>
-<section class="section breadcrumb-modern context-dark parallax-container text-center" data-parallax-img="{{ asset('ui/frontend/images/slider/bannar.png') }}">
+{{-- <section class="section breadcrumb-modern context-dark parallax-container text-center" data-parallax-img="{{ asset('ui/frontend/images/slider/bannar.png') }}">
       <div class="shell">
         <h2 class="veil reveal-sm-block" style="color:yellow;">Management Committee</h2>
         <div class="offset-sm-top-35">
@@ -10,14 +10,27 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
+  <section class="section breadcrumb-modern context-dark parallax-container text-center" data-parallax-img="{{ asset('ui/frontend/images/slider/bannar.png') }}">
+            <div class="parallax-content section-30 section-sm-70">
+                <div class="shell">
+                    <h2 class="veil reveal-sm-block"  style="color:yellow;">Management Committee List</h2>
+                    <div class="offset-sm-top-35">
+                        <ul class="list-inline list-inline-lg list-inline-dashed p">
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li  style="color:yellow;">Management Committee List</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
   <div style="height:20px;">
   </div>
   {{-- <div class="container ">
     <div class="row my-5 ">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
         <div class="card shadow">
-          <div class="card-header bg-info  text-center" style="color: #4545E6">
+          <div class="card-header bg-info  text-center" style="background-color: #0D4933;">
             <h3 class="style="color:yellow;"" >The Governing Body of SBFNI</h3>
           </div>
           <div class="card-body" id="show_all_students">
@@ -87,8 +100,8 @@
     <div class="row my-5 ">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
         <div class="card shadow">
-          <div class="card-header bg-info  text-center" style="color: #4545E6">
-            <h3 class="text-light">The Board of Advisory</h3>
+                    <div class="card-header  text-center" style="background-color: #0D4933;">
+                        <h3 class="page-headings text-white">The Board of Advisory</h3>
           </div>
           <div class="card-body" id="show_all_students">
             <table class="table table-striped table-sm text-center align-middle table-hover">
@@ -136,8 +149,8 @@
     <div class="row my-5 ">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
         <div class="card shadow">
-          <div class="card-header bg-info  text-center" style="color: #4545E6">
-            <h3 class="text-light">The Academic Council Members</h3>
+                    <div class="card-header  text-center" style="background-color: #0D4933;">
+                        <h3 class="page-headings text-white">The Academic Council Members</h3>
           </div>
           <div class="card-body" id="show_all_students">
             <table class="table table-striped table-sm text-center align-middle table-hover">

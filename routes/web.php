@@ -50,6 +50,8 @@ Route::get('/home/contact', [HomeController::class, 'contact'])->name('contact')
 Route::get('/home/internship', [HomeController::class, 'internship'])->name('internship');
 Route::get('/home/payment', [HomeController::class, 'payment_guidelines'])->name('payment_guidelines');
 
+Route::get('/home/ranking', [HomeController::class, 'home_ranking'])->name('home_ranking');
+
 //news
 Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/news/{id}', [HomeController::class, 'news_details'])->name('news_details');
@@ -280,6 +282,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/admin/message', MessageController::class);
+Route::get('/admin/message/deleteall', [MessageController::class, 'deleteall'])->name('message.deleteall');
 Route::get('/notification/{message}/{notification}', [NotificationController::class, 'showForUpdating'])->name("/admin/message.show");
 
 

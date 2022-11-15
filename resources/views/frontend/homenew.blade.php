@@ -374,9 +374,16 @@
       </div>
     </div>
     <script>
-      $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+      // $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+      //   event.preventDefault();
+      //   $(this).ekkoLightbox();
+      // });
+      // image show big size in lightbox 
+      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
-        $(this).ekkoLightbox();
+        $(this).ekkoLightbox({
+          alwaysShowClose: true
+        });
       });
     </script>
   </section>

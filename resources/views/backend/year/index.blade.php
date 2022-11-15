@@ -38,8 +38,8 @@
                     <tr>
                         <th>Sl#</th>
                         <th>Student Name</th>
-                        <th>Reg Number</th>
-                        <th>Roll Number</th>
+                        {{-- <!--<th>Reg Number</th>--> --}}
+                        {{-- <!--<th>Roll Number</th>--> --}}
                         <th>Year</th>
                         <th>Course Year</th>
                         <th>Section</th>
@@ -53,17 +53,17 @@
                         <td>{{ ++$sl }}</td>
                        
                         <td>{{ $year->user->name??'' }}</td> 
-                        <td>{{ $year->user->reg_num??'' }}</td>
-                        <td>{{ $year->user->roll_num ??''}}</td>
+                        {{-- <!--<td>{{ $year->user->reg_num??'' }}</td>--> --}}
+                        {{-- <!--<td>{{ $year->user->roll_num ??''}}</td>--> --}}
                         <td>{{ $year->year ??''}}</td>  
                         <td>{{ $year->course_year??'' }}</td>
                         <td>{{ $year->section??'' }}</td>
 
                         
                         <td>
-                            <a class="btn btn-info btn-sm" href="{{ route('year.show', ['year' => $year->id]) }}">Show</a>
+                            {{-- <!--<a class="btn btn-info btn-sm" href="{{ route('year.show', ['year' => $year->id]) }}">Show</a>--> --}}
 
-                            <a class="btn btn-warning btn-sm" href="{{ route('year.edit', ['year' => $year->id]) }}">Edit</a>
+                            {{-- <!--<a class="btn btn-warning btn-sm" href="{{ route('year.edit', ['year' => $year->id]) }}">Edit</a>--> --}}
 
                             <form style="display:inline" action="{{ route('year.destroy', ['year' => $year->id]) }}" method="post">
                                 @csrf
